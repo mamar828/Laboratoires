@@ -41,8 +41,10 @@ La résistance interne du module d'aquisition est non-négligeable a faible volt
 Questions d'analyse
 
 Q1 Évaluez la résolution de numérisation (conversion analogique-numérique, échantillonnage) du module
-d’acquisition lors d’une mesure de tension pour les dif- férents intervalles utilisés pendant le laboratoire, sachant
+d’acquisition lors d’une mesure de tension pour les différents intervalles utilisés pendant le laboratoire, sachant
 que cette mesure est une différence (differential) de potentiel entre deux points du circuit.
+
+
 
 Q1.1 Quelle est la résolution calculée pour l’intervalle de −10V à 10V?
 ▶ 4,9×10−1V ▶ 4,9×10−2V ▶ 4,9×10−3V ▶ 4,9×10−4V
