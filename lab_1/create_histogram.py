@@ -110,9 +110,9 @@ def create_histogram_from_lvm(
 
 
 create_histogram_from_lvm(
-    "/Users/felixdesroches/Downloads/20230919_mesures_patate_inox_alu_2.lvm",
+    "data/20230919_mesures_patate_inox_alu_2.lvm",
     histogram=True,
     point_cloud=True,
     show=True,
-    path_to_save_folder="/Users/felixdesroches/Desktop/ULaval_labs/PHY_2002_electronique/Laboratoires/save_fig",
+    path_to_save_folder="save_fig",
 )
