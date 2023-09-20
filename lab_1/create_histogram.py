@@ -72,11 +72,14 @@ def create_histogram_from_lvm(
         The path to the folder within which the graph should be saved. Does not save the graph by default.
     """
     lvm_file = lvm_read.read(file_path)
-    y_data = np.transpose(lvm_file[0]["data"][:, 1]).squeeze()
+    if len(lvm_file[0]["data"][0]) == 2:
+        y_data = np.transpose(lvm_file[0]["data"][:, 1]).squeeze()
+    else:
+        y_data = np.transpose(lvm_file[0]["data"]).squeeze()
     delta_x = lvm_file[0]["Delta_X"][0]
     x_data = np.linspace(0, delta_x * (len(y_data) - 1), len(y_data))
-    print('x', len(x_data), x_data)
-    print('y', len(y_data), y_data)
+    # print('x', len(x_data), x_data)
+    # print('y', len(y_data), y_data)
     if point_cloud and histogram:
         fig, arr = plt.subplots(nrows=1, ncols=2, figsize=(16, 6))
         arr[0].hist(y_data)
@@ -112,6 +115,62 @@ def create_histogram_from_lvm(
 
 
 create_histogram_from_lvm(
+    "data/20230919_mesures_smol_patate_inox_alu.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='smol_inox_alu.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_smol_patate_zinc_inox.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='smol_zinc_inox.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_smol_patate_zinc_alu.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='smol_zinc_alu.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_smol_patate_acier_alu.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='smol_acier_alu.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_patate_inox_alu.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='not_smol_inox_alu.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_patate_inox_alu_1.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='not_smol_inox_alu_1.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_patate_inox_alu_2.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='not_smol_inox_alu_2.pdf'
+)
+create_histogram_from_lvm(
     "data/20230919_mesures_resistances.lvm",
     histogram=True,
     point_cloud=True,
@@ -143,4 +202,3 @@ create_histogram_from_lvm(
     path_to_save_folder="save_fig",
     filename='res_3_col_2.pdf'
 )
-
