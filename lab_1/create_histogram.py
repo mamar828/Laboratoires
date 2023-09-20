@@ -72,7 +72,8 @@ def create_histogram_from_lvm(
         The path to the folder within which the graph should be saved. Does not save the graph by default.
     """
     lvm_file = lvm_read.read(file_path)
-    y_data = np.transpose(lvm_file[0]["data"]).squeeze()
+    print(lvm_file)
+    y_data = np.transpose(lvm_file[0]["data"])[0:].squeeze()
     delta_x = lvm_file[0]["Delta_X"][0]
     x_data = np.linspace(0, delta_x * (len(y_data) - 1), len(y_data))
     if point_cloud and histogram:
@@ -82,7 +83,7 @@ def create_histogram_from_lvm(
         arr[1].scatter(x_data, y_data)
     elif point_cloud:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
-        arr.plot(x_data, y_data, linestyle='-')
+        # arr.plot(x_data, y_data, linestyle='-')
         arr.scatter(x_data, y_data)
     elif histogram:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
@@ -110,9 +111,35 @@ def create_histogram_from_lvm(
 
 
 create_histogram_from_lvm(
-    "data/20230919_mesures_patate_inox_alu_2.lvm",
+    "data/20230919_mesures_resistances.lvm",
     histogram=True,
     point_cloud=True,
-    show=True,
+    show=False,
     path_to_save_folder="save_fig",
+    filename='res_0.pdf'
 )
+create_histogram_from_lvm(
+    "data/20230919_mesures_resistances_1.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='res_1.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_resistances_2.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='res_2.pdf'
+)
+create_histogram_from_lvm(
+    "data/20230919_mesures_resistances_3.lvm",
+    histogram=True,
+    point_cloud=True,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='res_3.pdf'
+)
+
