@@ -10,8 +10,8 @@ import os
 from typing import Optional
 
 import lvm_read
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def terminate_figure(
@@ -78,10 +78,12 @@ def create_histogram_from_lvm(
     if point_cloud and histogram:
         fig, arr = plt.subplots(nrows=1, ncols=2, figsize=(16, 6))
         arr[0].hist(y_data)
-        arr[1].plot(x_data, y_data, linestyle='None')
+        # arr[1].plot(x_data, y_data, linestyle='-')
+        arr[1].scatter(x_data, y_data)
     elif point_cloud:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
-        arr.plot(x_data, y_data, linestyle='None')
+        arr.plot(x_data, y_data, linestyle='-')
+        arr.scatter(x_data, y_data)
     elif histogram:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
         arr.hist(y_data)
@@ -110,7 +112,7 @@ def create_histogram_from_lvm(
 create_histogram_from_lvm(
     "/Users/felixdesroches/Downloads/20230919_mesures_patate_inox_alu_2.lvm",
     histogram=True,
-    point_cloud=False,
+    point_cloud=True,
     show=True,
-    path_to_save_folder="/Users/felixdesroches/Desktop/python_random_files/save_fig",
+    path_to_save_folder="/Users/felixdesroches/Desktop/ULaval_labs/PHY_2002_electronique/Laboratoires/save_fig",
 )
