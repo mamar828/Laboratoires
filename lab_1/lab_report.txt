@@ -13,7 +13,8 @@ Créer un VI vide;
 Ouvrir la boite du système d'acquisition de données;
 En utilisant le fil inclu dans la boite, connecter le système à l'ordinateur;
 Ajouter un assistant DAQ dans le VI;
-En sélectionnant "Aquérir des signaux -> Entrée analogique -> Tension" ajouter le système d'acquisition de donnée dans le VI;
+En sélectionnant "Aquérir des signaux -> Entrée analogique -> Tension" ajouter le système d'acquisition de donnée dans
+le VI;
 Ajouter une boucle While;
 Créer le circuit indiqué en annexe;
 Configuer le VI tel que la gamme de potentiels est [-10, 10] V;
@@ -44,10 +45,18 @@ Q1 Évaluez la résolution de numérisation (conversion analogique-numériqu
 d’acquisition lors d’une mesure de tension pour les différents intervalles utilisés pendant le laboratoire, sachant
 que cette mesure est une différence (differential) de potentiel entre deux points du circuit.
 
+Lorsque nous avons utilisé l'intervalle [-10,10] V, c'est à dire pour la prise de données des électrodes d'inox et
+d'aluminium, la résolution de numérisation est de 0.51 mV.
 
+
+Lorsque nous avons utilisé l'intervalle [-1,1] V, notamment pour la prise de données des électrodes d'acier et
+d'aluminium, la résolution est de 0.5 mV.
 
 Q1.1 Quelle est la résolution calculée pour l’intervalle de −10V à 10V?
 ▶ 4,9×10−1V ▶ 4,9×10−2V ▶ 4,9×10−3V ▶ 4,9×10−4V
+
+Selon la réponse à la question précédente, la résolution calculée pour cet intervalle est de 0.51 mV, soit environ 
+4.9*10-4V.
 
 Q1.2 Quelle est la résolution calculée pour l’intervalle de −1V à 1V?
 ▶ 490mV ▶ 49mV ▶ 4,9mV ▶ 0,49mV
@@ -55,6 +64,11 @@ Q1.2 Quelle est la résolution calculée pour l’intervalle de −1V à 1V?
 Q1.3 Vous devriez observer un effet indésirable de cette limite de résolution dans au moins un de vos graphiques
 pour visualiser vos données. À laquelle des formes suivantes cela correspond-il le mieux ?
 ▶ Triangles ▶ Rampes ▶ Paliers
+
+On remarque dans plusieurs graphiques la présence de paliers mettant l'accent sur la discrétisation de l'appareil. En
+effet, en raison de sa précision, celui-ci n'est pas en mesure de déterminer la différence de potentiel sur une étendue
+continue et il se produit par conséquent des « sauts », soit des paliers où les valeurs semblent être égales, mais ne
+l'étaient pas tout à fait en réalité.
 
 Q2.1 Avez-vous mesuré une tension qui fluctuait autour de zéro pour la combinaison acier–aluminium ?
 ▶ Oui ▶ Non
