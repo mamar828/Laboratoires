@@ -1,0 +1,33 @@
+LabVIEW Measurement	
+Writer_Version	2
+Reader_Version	2
+Separator	Tab
+Decimal_Separator	,
+Multi_Headings	No
+X_Columns	No
+Time_Pref	Absolute
+Operator	MAMAR828
+Date	2023/09/19
+Time	12:13:31,6268925833530975563
+***End_of_Header***	
+	
+Channels	1	
+Samples	10	
+Date	2023/09/19	
+Time	12:13:31,6268925833530975563	
+Y_Unit_Label	Volts	
+X_Dimension	Time	
+X0	0,0000000000000000E+0	
+Delta_X	0,100000	
+***End_of_Header***		
+X_Value	Tension	Comment
+	0,028215
+	0,028215
+	0,028725
+	0,028725
+	0,028725
+	0,029235
+	0,028725
+	0,028725
+	0,028215
+	0,028215
