@@ -45,21 +45,21 @@ Q1 Évaluez la résolution de numérisation (conversion analogique-numériqu
 d’acquisition lors d’une mesure de tension pour les différents intervalles utilisés pendant le laboratoire, sachant
 que cette mesure est une différence (differential) de potentiel entre deux points du circuit.
 
-Lorsque nous avons utilisé l'intervalle [-10,10] V, c'est à dire pour la prise de données des électrodes d'inox et
-d'aluminium, la résolution de numérisation est de 0.51 mV.
-
-
-Lorsque nous avons utilisé l'intervalle [-1,1] V, notamment pour la prise de données des électrodes d'acier et
-d'aluminium, la résolution est de 0.5 mV.
+Lorsque nous avons utilisé l'intervalle [-10,10] V, la résolution de numérisation est de 5.1 mV.
+Lorsque nous avons utilisé l'intervalle [-1,1] V, la résolution est de 0.51 mV.
+Lorsque nous avons utilisé l'intervalle [-0.05,0.05] V, la résolution est 0.51 mV.
 
 Q1.1 Quelle est la résolution calculée pour l’intervalle de −10V à 10V?
 ▶ 4,9×10−1V ▶ 4,9×10−2V ▶ 4,9×10−3V ▶ 4,9×10−4V
 
-Selon la réponse à la question précédente, la résolution calculée pour cet intervalle est de 0.51 mV, soit environ 
-4.9*10-4V.
+Selon la réponse à la question 1, la résolution calculée pour cet intervalle est de 5.1 mV, soit environ 
+4.9*10-3V.
 
 Q1.2 Quelle est la résolution calculée pour l’intervalle de −1V à 1V?
 ▶ 490mV ▶ 49mV ▶ 4,9mV ▶ 0,49mV
+
+Selon la réponse à la question 1, la résolution calculée pour cet intervalle est de 0.51 mV, soit environ 
+4.9*10-4V.
 
 Q1.3 Vous devriez observer un effet indésirable de cette limite de résolution dans au moins un de vos graphiques
 pour visualiser vos données. À laquelle des formes suivantes cela correspond-il le mieux ?
@@ -91,6 +91,15 @@ légende lequel des deux correspond le mieux au modèle de la loi normale (dis
 cette loi ne s’applique PAS, présentez aussi graphiquement les données de tension d’une manière différente qui met
 en lumière le manque de stabilité de la mesure.
 
+On remarque que l'histogramme de l'étape f) présente un modèle peu gaussien étant donné que les valeurs mesurées se
+tiennent davantage aux extrêmes et oscillent de façon presque sinusoïdale. Dans le graphique ci-contre, la distribution
+non-gaussienne est évidente.
+Dans l'histogramme de l'étape h), on remarque cette fois un modèle beaucoup plus gaussien malgré le grand manque de
+données. En effet, les valeurs extrêmes sont beaucoup moins fréquentes que pour l'histogramme de la question f) et la
+valeur centrale, soit zéro, est la valeur la plus fréquente.
+
+ ----------------------------------------------- INSERT GRAPHICS  -----------------------------------------------
+
 Q4  À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de
 Type A de l’incertitude tel que présentée dans l’introduction aux bases de la métrologie. Concrètement, divisez la
 colonne tension par la colonne courant pour obtenir une distribution de la mesure de résistance. Puis, comparez la
@@ -106,7 +115,7 @@ Q2.1 et Q2.2 peuvent être répondues théoriquement avant le laboratoire avec d
 d'oxydoréduction.
 
 Q6  Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
-conclusion d’un rapport scienti- fique portant sur l’ensemble du laboratoire.
+conclusion d’un rapport scientifique portant sur l’ensemble du laboratoire.
 
 
 
