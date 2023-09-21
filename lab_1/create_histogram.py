@@ -79,7 +79,10 @@ def create_histogram_from_lvm(
         intensity = tension_2 / 12
         resistance = tension_1/intensity
         print(resistance)
-        print(np.average(resistance), np.std(resistance))
+        print(np.average(resistance), np.std(resistance), np.median(resistance))
+        fig, arr = plt.subplots(1, 1, figsize=(8, 6))
+        arr.hist(resistance, bins=25)
+        plt.show()
     else:
         y_data = np.transpose(lvm_file[0]["data"]).squeeze()
     delta_x = lvm_file[0]["Delta_X"][0]

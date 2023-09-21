@@ -108,6 +108,14 @@ moyenne et la médiane de cette distribution de résistance.
 N.B. Dans cette situation instable, il vaut mieux définir un intervalle d’incertitude très élargi en multipliant par
 3 l’écart type σ de votre distribution de données.
 
+La valeur moyenne de notre distribution est de 431.7455295242198 Ohm avec un écart-type de 177.23900145139626 Ohm, ce
+qui signifie que, une fois trois écart-types considérés pour l'incertitude, une valeur de (400 ± 600) Ohm. L'incertitude
+à étée arrondie à la valeur suppérieur du premier chiffre significatif afin de garantir une bonne caractérisation des
+mesures et de s'assurer que l'incertitude n'est pas sous-estimée. La médiane de notre distribution est de
+411.43093922651934 ce qui implique une distribution relativement symétrique des valeurs obtenue. Bien que dans les
+limites de l'interval pour la valeur expérimentale, il y un croisement des valeurs expérimentales et de référence,
+signifiant l'exactitude de la mesure expérimentale.
+
 Q5  Laquelle ou lesquelles des questions précédentes peuvent être répondues en préparation avant le laboratoire ?
 ▶ Q1.1 ▶ Q1.2 ▶ Q1.3 ▶ Q2.1 ▶ Q2.2 ▶ Q3 ▶ Q4
 
