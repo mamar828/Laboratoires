@@ -102,6 +102,9 @@ N.B. Dans cette situation instable, il vaut mieux définir un intervalle d’in
 Q5  Laquelle ou lesquelles des questions précédentes peuvent être répondues en préparation avant le laboratoire ?
 ▶ Q1.1 ▶ Q1.2 ▶ Q1.3 ▶ Q2.1 ▶ Q2.2 ▶ Q3 ▶ Q4
 
+Q2.1 et Q2.2 peuvent être répondues théoriquement avant le laboratoire avec des connaissances simples des réactions
+d'oxydoréduction.
+
 Q6  Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
 conclusion d’un rapport scienti- fique portant sur l’ensemble du laboratoire.
 
