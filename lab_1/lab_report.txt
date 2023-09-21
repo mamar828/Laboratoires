@@ -67,16 +67,24 @@ pour visualiser vos données. À laquelle des formes suivantes cela correspond
 
 On remarque dans plusieurs graphiques la présence de paliers mettant l'accent sur la discrétisation de l'appareil. En
 effet, en raison de sa précision, celui-ci n'est pas en mesure de déterminer la différence de potentiel sur une étendue
-continue et il se produit par conséquent des « sauts », soit des paliers où les valeurs semblent être égales, mais ne
-l'étaient pas tout à fait en réalité.
+continue et il se produit par conséquent des « sauts », soit des paliers où les valeurs données par l'instrument sont
+égales, mais ne l'étaient pas tout à fait en réalité.
 
 Q2.1 Avez-vous mesuré une tension qui fluctuait autour de zéro pour la combinaison acier–aluminium ?
 ▶ Oui ▶ Non
+
+Oui
 
 Q2.2 Si oui,pourquoi en est-il ainsi?
 ▶ L’acier est oxydé.
 ▶ Acier et aluminium commencent les deux par la lettre «a», donc ils ne peuvent réagir ensemble.
 ▶ Les deux métaux ont la même électronégativité.
+
+L'acier est un alliage constitué principalement de fer et de carbone et ces deux éléments n'ont pas la même
+électronégativité que l'aluminium. On remarque donc que la tension fluctuant autour de zéro est due au fait que l'acier
+est oxydé et donc que la réaction d'oxydo-réduction ne peut pas se produire. En l'absence de réaction chimique, aucun
+électron n'est libéré ce qui fait en sorte qu'aucun courant ne circule dans le fil électrique et qu'il n'y a pas de
+différence de potentiel entre les deux tiges.
 
 Q3 Comparez l’histogramme de l’étape f) pour la combinaison inox-aluminium à celui de l’étape h) en explicitant en
 légende lequel des deux correspond le mieux au modèle de la loi normale (distribution gaussienne). Pour le cas où
