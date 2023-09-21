@@ -74,10 +74,17 @@ def create_histogram_from_lvm(
     lvm_file = lvm_read.read(file_path)
     if len(lvm_file[0]["data"][0]) == 2:
         y_data = np.transpose(lvm_file[0]["data"][:, 0]).squeeze()
+        tension_1 = np.transpose(lvm_file[0]["data"][:, 0]).squeeze()
+        tension_2 = np.transpose(lvm_file[0]["data"][:, 1]).squeeze()
+        intensity = tension_2 / 12
+        resistance = tension_1/intensity
+        print(resistance)
+        print(np.average(resistance), np.std(resistance))
     else:
         y_data = np.transpose(lvm_file[0]["data"]).squeeze()
     delta_x = lvm_file[0]["Delta_X"][0]
     x_data = np.linspace(0, delta_x * (len(y_data) - 1), len(y_data))
+
     if point_cloud and histogram:
         fig, arr = plt.subplots(nrows=1, ncols=2, figsize=(16, 6))
         arr[0].hist(y_data, bins=25)
@@ -113,98 +120,105 @@ def create_histogram_from_lvm(
 
 
 create_histogram_from_lvm(
-    "data/20230919_mesures_0.05_nothing.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_nothing.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_smol_patate_inox_alu.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_smol_inox_alu.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_smol_patate_zinc_inox.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_smol_zinc_inox.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_smol_patate_zinc_alu.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_smol_zinc_alu.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_smol_patate_acier_alu.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_smol_acier_alu.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_patate_inox_alu.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_not_smol_inox_alu.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_patate_inox_alu_1.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_not_smol_inox_alu_1.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_patate_inox_alu_2.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_not_smol_inox_alu_2.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_resistances.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_res_0_col_2.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_resistances_1.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_res_1_col_2.pdf'
-)
-create_histogram_from_lvm(
-    "data/20230919_mesures_resistances_2.lvm",
-    histogram=True,
-    point_cloud=True,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_res_2_col_2.pdf'
-)
-create_histogram_from_lvm(
     "data/20230919_mesures_resistances_3.lvm",
     histogram=True,
     point_cloud=True,
     show=False,
-    path_to_save_folder="save_fig",
-    filename='25_bins_res_3_col_2.pdf'
+    path_to_save_folder=None,
 )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_0.05_nothing.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_nothing.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_smol_patate_inox_alu.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_smol_inox_alu.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_smol_patate_zinc_inox.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_smol_zinc_inox.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_smol_patate_zinc_alu.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_smol_zinc_alu.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_smol_patate_acier_alu.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_smol_acier_alu.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_patate_inox_alu.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_not_smol_inox_alu.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_patate_inox_alu_1.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_not_smol_inox_alu_1.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_patate_inox_alu_2.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_not_smol_inox_alu_2.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_resistances.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_res_0_col_2.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_resistances_1.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_res_1_col_2.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_resistances_2.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_res_2_col_2.pdf'
+# )
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_resistances_3.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='25_bins_res_3_col_2.pdf'
+# )
