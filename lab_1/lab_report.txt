@@ -94,11 +94,11 @@ en lumière le manque de stabilité de la mesure.
 On remarque que l'histogramme de l'étape f) présente un modèle peu gaussien étant donné que les valeurs mesurées se
 tiennent davantage aux extrêmes et oscillent de façon presque sinusoïdale. Dans le graphique ci-contre, la distribution
 non-gaussienne est évidente.
-Dans l'histogramme de l'étape h), on remarque cette fois un modèle beaucoup plus gaussien malgré le grand manque de
+Dans l'histogramme de l'étape h), on remarque cette fois-ci un modèle beaucoup plus gaussien malgré le grand manque de
 données. En effet, les valeurs extrêmes sont beaucoup moins fréquentes que pour l'histogramme de la question f) et la
 valeur centrale, soit zéro, est la valeur la plus fréquente.
 
- ----------------------------------------------- INSERT GRAPHICS  -----------------------------------------------
+ ----------------------------------------------- INSERT GRAPHICS -----------------------------------------------
 
 Q4  À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de
 Type A de l’incertitude tel que présentée dans l’introduction aux bases de la métrologie. Concrètement, divisez la
