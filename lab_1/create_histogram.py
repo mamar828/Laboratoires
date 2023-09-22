@@ -97,6 +97,8 @@ def create_histogram_from_lvm(
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
         # arr.plot(x_data, y_data, linestyle='-')
         arr.scatter(x_data, y_data)
+        arr.set_ylabel('Voltage [V]')
+        arr.set_xlabel('Time [s]')
     elif histogram:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
         arr.hist(y_data, bins=25)
@@ -131,21 +133,21 @@ def create_histogram_from_lvm(
 #     show=False,
 #     path_to_save_folder=None,
 # )
-create_histogram_from_lvm(
-    "data/20230919_mesures_0.05_nothing.lvm",
-    histogram=True,
-    point_cloud=False,
-    show=False,
-    path_to_save_folder="save_fig",
-    filename='histogram_nothing.pdf'
-)
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_0.05_nothing.lvm",
+#     histogram=True,
+#     point_cloud=False,
+#     show=False,
+#     path_to_save_folder="save_fig",
+#     filename='histogram_nothing.pdf'
+# )
 create_histogram_from_lvm(
     "data/20230919_mesures_smol_patate_inox_alu.lvm",
-    histogram=True,
-    point_cloud=False,
+    histogram=False,
+    point_cloud=True,
     show=False,
     path_to_save_folder="save_fig",
-    filename='histogram_inox_alu.pdf'
+    filename='point_cloud_inox_alu.pdf'
 )
 # create_histogram_from_lvm(
 #     "data/20230919_mesures_smol_patate_zinc_inox.lvm",
