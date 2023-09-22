@@ -125,25 +125,26 @@ d'oxydoréduction.
 Q6 Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
 conclusion d’un rapport scientifique portant sur l’ensemble du laboratoire.
 
-Les piles électriques modernes permettent bien évidemment de fournir une source d'énergie électrique et sont
+Les piles électriques modernes permettent de fournir une source d'énergie électrique et sont
 indispensables dans l'industrie et la vie d'aujourd'hui. On distingue deux types de batteries, soit les batteries
-primaires, par exemple les batteries alcalines, qui doivent être disposées une fois utilisées et les batteries
-secondaires, par exemple les batteries lithium-ion, qui peuvent être rechargées une fois vidées. Ces types de batterie
-sont bien connus, mais ce qui est bien moins connu est l'utilisation d'autres matières pour former des piles, notamment
-des légumes, voire des patates, en utilisant une réaction d'oxydoréduction. L'utilisation de patates permet de mieux
-comprendre le fonctionnement de ce type de réaction et d'évaluer différents facteurs pouvant limiter la différence de
-potentiel produite tel que le matériau des électrodes, le positionnement des fils ainsi que le temps d'insertion dans
-la patate. Ce rapport partiel comporte les résultats et observations faites pendant l'expérience, une analyse sous
-forme de questions et un retour sur les objectifs en conclusion.
+primaires, par exemple les batteries alcalines, qui doivent être disposées après utilisation et les batteries
+secondaires, par exemple les batteries lithium-ion, qui sont rechargeables une fois l'énergie utilisée. Ces types
+de batterie sont bien connus, mais ce qui est bien moins connu, par moins grande petinence financière et industrielle,
+est l'utilisation d'autres matières pour former des piles, notamment des composés organiques tels que des légumes, par
+exemple des patates, en utilisant une réaction d'oxydoréduction. L'utilisation de patates permet de mieux comprendre le
+fonctionnement de ce type de réaction et d'évaluer différents facteurs pouvant limiter la  différence de potentiel
+produite tel que le matériau des électrodes, le positionnement des fils ainsi que le temps d'insertion dans la patate.
+Ce rapport partiel comporte les résultats et observations faites pendant l'expérience, une analyse sous forme de
+questions et un retour sur les objectifs en conclusion.
 
 On remarque qu'il est en effet possible d'étudier le fonctionnement d'une pile d'oxydoréduction à l'aide d'une patate
 et de tester l'impact de plusieurs facteurs. L'expérience permet de constater que le matériau des électrodes vient
-grandement affecter la tension; la combinaison d'électrodes de zinc et d'inox permet d'obtenir la plus grande
-différence de potentiel, soit environ 600 mV, tandis que la combinaison d'électrodes d'acier et d'aluminium ne provoque
-aucune différence de potentiel. On remarque également que la différence de potentiel générée chute avec le temps
-puisque la réaction a besoin de nouveaux réactifs pour se produire. La dernière partie de l'expérience, où la
-résistance d'une résistance de 1000 ohms a été mesurée, a permis de réaliser qu'à de si petites différences de
-potentiel, l'incertitude relative est très grande et la résistance des fils et d'appareils tel de que le module
-d'acquisition ne sont plus négligeables. Il pourrait être intéressant de refaire une expérience similaire avec d'autres
-aliments pour voir si certains permettent d'obtenir une plus grande tension ce qui permettrait de diminuer les pertes
-et donc l'incertitude sur les différentes mesures.
+grandement affecter la tension produire; la combinaison d'électrodes de zinc et d'acier inoxydable permet d'obtenir la
+plus grande différence de potentiel, soit environ 600 mV, tandis que la combinaison d'électrodes d'acier et d'aluminium
+ne provoque aucune différence de potentiel. On remarque également que la différence de potentiel générée chute avec le
+temps puisque les réactifs  disponibles pour la réaction sont consommés. La dernière partie de l'expérience, où la
+résistance d'une résistance de 1000 ohms a été mesurée, a permis de réaliser qu'à de si petites tansions, l'incertitude
+relative est très grande et la résistance des fils et d'appareils tel de que le module d'acquisition ne sont plus
+négligeables. Il pourrait être intéressant de refaire une expérience similaire avec d'autres aliments pour voir si
+certains permettent d'obtenir une plus grande tension ce qui permettrait de diminuer les pertes et donc l'incertitude
+sur les différentes mesures.
