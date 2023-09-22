@@ -41,9 +41,7 @@ La résistance interne du module d'aquisition est non-négligeable a faible volt
 
 Questions d'analyse
 
-Q1 Évaluez la résolution de numérisation (conversion analogique-numérique, échantillonnage) du module
-d’acquisition lors d’une mesure de tension pour les différents intervalles utilisés pendant le laboratoire, sachant
-que cette mesure est une différence (differential) de potentiel entre deux points du circuit.
+Q1 Évaluez la résolution de numérisation (conversion analogique-numérique, échantillonnage) du module d’acquisition lors d’une mesure de tension pour les différents intervalles utilisés pendant le laboratoire, sachant que cette mesure est une différence (differential) de potentiel entre deux points du circuit.
 
 Lorsque nous avons utilisé l'intervalle [-10,10] V, la résolution de numérisation est de 5.1 mV.
 Lorsque nous avons utilisé l'intervalle [-1,1] V, la résolution est de 0.51 mV.
@@ -59,14 +57,10 @@ Q1.2 Quelle est la résolution calculée pour l’intervalle de −1V à 1V?
 
 La résolution calculée pour cet intervalle est de 0.51 mV.
 
-Q1.3 Vous devriez observer un effet indésirable de cette limite de résolution dans au moins un de vos graphiques
-pour visualiser vos données. À laquelle des formes suivantes cela correspond-il le mieux ?
+Q1.3 Vous devriez observer un effet indésirable de cette limite de résolution dans au moins un de vos graphiques pour visualiser vos données. À laquelle des formes suivantes cela correspond-il le mieux ?
 ▶ Triangles ▶ Rampes ▶ Paliers
 
-On remarque dans plusieurs graphiques la présence de paliers mettant l'accent sur la discrétisation de l'appareil. En
-effet, en raison de sa précision, celui-ci n'est pas en mesure de déterminer la différence de potentiel sur une étendue
-continue et il se produit par conséquent des « sauts », soit des paliers où les valeurs données par l'instrument sont
-égales, mais ne l'étaient pas tout à fait en réalité.
+On remarque dans plusieurs graphiques la présence de paliers mettant l'accent sur la discrétisation de l'appareil. En effet, en raison de sa précision, celui-ci n'est pas en mesure de déterminer la différence de potentiel sur une étendue continue et il se produit par conséquent des « sauts », soit des paliers où les valeurs données par l'instrument sont égales, mais ne l'étaient pas tout à fait en réalité.
 
 Q2.1 Avez-vous mesuré une tension qui fluctuait autour de zéro pour la combinaison acier–aluminium ?
 ▶ Oui ▶ Non
@@ -78,38 +72,25 @@ Q2.2 Si oui,pourquoi en est-il ainsi?
 ▶ Acier et aluminium commencent les deux par la lettre «a», donc ils ne peuvent réagir ensemble.
 ▶ Les deux métaux ont la même électronégativité.
 
-L'acier est un alliage constitué principalement de fer et de carbone et ces deux éléments n'ont pas la même
-électronégativité que l'aluminium. On remarque donc que la tension fluctuant autour de zéro est due au fait que l'acier
-est oxydé et donc que la réaction d'oxydoréduction ne peut pas se produire. En l'absence de réaction chimique, aucun
-électron n'est libéré ce qui fait en sorte qu'aucun courant ne circule dans le fil électrique et qu'il n'y a pas de
-différence de potentiel entre les deux tiges.
+L'acier est un alliage constitué principalement de fer et de carbone et ces deux éléments n'ont pas la même électronégativité que l'aluminium. On remarque donc que la tension fluctuant autour de zéro est due au fait que l'acier est oxydé et donc que la réaction d'oxydoréduction ne peut pas se produire. En l'absence de réaction chimique, aucun électron n'est libéré ce qui fait en sorte qu'aucun courant ne circule dans le fil électrique et qu'il n'y a pas de différence de potentiel entre les deux tiges.
 
-Q3 Comparez l’histogramme de l’étape f) pour la combinaison inox-aluminium à celui de l’étape h) en explicitant en
-légende lequel des deux correspond le mieux au modèle de la loi normale (distribution gaussienne). Pour le cas où
-cette loi ne s’applique PAS, présentez aussi graphiquement les données de tension d’une manière différente qui met
-en lumière le manque de stabilité de la mesure.
+Q3 Comparez l’histogramme de l’étape f) pour la combinaison inox-aluminium à celui de l’étape h) en explicitant en légende lequel des deux correspond le mieux au modèle de la loi normale (distribution gaussienne). Pour le cas où cette loi ne s’applique PAS, présentez aussi graphiquement les données de tension d’une manière différente qui met en lumière le manque de stabilité de la mesure.
 
 On remarque que l'histogramme de l'étape f) présente un modèle peu gaussien étant donné que les valeurs mesurées se tiennent davantage aux extrêmes et oscillent de façon presque sinusoïdale. Dans le deuxième graphique, la distribution non-gaussienne des valeurs est évidente. Dans l'histogramme de l'étape h), on remarque cette fois-ci un modèle beaucoup plus gaussien malgré le grand manque de données. En effet, les valeurs extrêmes sont beaucoup moins fréquentes que pour l'histogramme de la question f) et la valeur centrale, soit zéro, est la valeur la plus fréquente.
 
-Q4 À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de
-Type A de l’incertitude tel que présentée dans l’introduction aux bases de la métrologie. Concrètement, divisez la
-colonne tension par la colonne courant pour obtenir une distribution de la mesure de résistance. Puis, comparez la
-moyenne et la médiane de cette distribution de résistance.
+Q4 À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de Type A de l’incertitude tel que présentée dans l’introduction aux bases de la métrologie. Concrètement, divisez la colonne tension par la colonne courant pour obtenir une distribution de la mesure de résistance. Puis, comparez la moyenne et la médiane de cette distribution de résistance.
 
-N.B. Dans cette situation instable, il vaut mieux définir un intervalle d’incertitude très élargi en multipliant par
-3 l’écart type σ de votre distribution de données.
+N.B. Dans cette situation instable, il vaut mieux définir un intervalle d’incertitude très élargi en multipliant par 3 l’écart type σ de votre distribution de données.
 
 La valeur moyenne de notre distribution est de 431.7455295242198 ohms avec un écart-type de 177.23900145139626 ohms, ce qui signifie que, une fois trois écart-types considérés pour l'incertitude, une valeur de (400 ± 600) ohms. L'incertitude à été arrondie à la valeur suppérieure du premier chiffre significatif afin de garantir une bonne  caractérisation des mesures et de s'assurer que l'incertitude n'est pas sous-estimée. La médiane de notre distribution est de 411.43093922651934 ce qui implique une distribution relativement symétrique des valeurs obtenues. Bien que dans les limites de l'intervalle pour la valeur expérimentale, il y un croisement des valeurs expérimentales et de référence, signifiant l'exactitude de la mesure expérimentale.
 
 Q5 Laquelle ou lesquelles des questions précédentes peuvent être répondues en préparation avant le laboratoire ?
 ▶ Q1.1 ▶ Q1.2 ▶ Q1.3 ▶ Q2.1 ▶ Q2.2 ▶ Q3 ▶ Q4
 
-Q2.1 et Q2.2 peuvent être répondues théoriquement avant le laboratoire avec des connaissances simples des réactions
-d'oxydoréduction.
+Q1.1, Q1.2 et Q1.3 peuvent être répondues théoriquement avant le laboratoire avec des connaissances simples des réactions d'oxydoréduction et du module d'acquisition.
 
-Q6 Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
-conclusion d’un rapport scientifique portant sur l’ensemble du laboratoire.
+Q6 Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la conclusion d’un rapport scientifique portant sur l’ensemble du laboratoire.
 
-Les piles électriques modernes permettent de fournir une source d'énergie électrique et sont indispensables dans l'industrie et la vie d'aujourd'hui. On distingue deux types de batteries, soit les batteries primaires, par exemple les batteries alcalines, qui doivent être disposées après utilisation et les batteries secondaires, par exemple les batteries lithium-ion, qui sont rechargeables une fois leur énergie utilisée. Ces types de batterie sont bien connus, mais, par moins grande pertinence financière et industrielle, l'utilisation d'autres matières pour former des piles est bien moins répandu, notamment des composés organiques tels que des légumes, par exemple des patates, en utilisant une réaction d'oxydoréduction. L'utilisation de patates permet de mieux comprendre le fonctionnement de ce type de réaction et d'évaluer différents facteurs pouvant limiter la  différence de potentiel produite tel que le matériau des électrodes, le positionnement des fils ainsi que le temps d'insertion dans la patate. Ce rapport partiel comporte les résultats et observations faites pendant l'expérience, une analyse sous forme de questions et un retour sur les objectifs en conclusion. 
+Les piles électriques modernes permettent de fournir une source d'énergie électrique et sont indispensables dans l'industrie et la vie d'aujourd'hui. On distingue deux types de batteries, soit les batteries primaires, par exemple les batteries alcalines, qui doivent être disposées après utilisation et les batteries secondaires, par exemple les batteries lithium-ion, qui sont rechargeables une fois leur énergie utilisée. Ces types de batterie sont bien connus, mais, par moins grande pertinence financière et industrielle, l'utilisation d'autres matières pour former des piles est bien moins répandu, notamment des composés organiques tels que des légumes, par exemple des patates, en utilisant une réaction d'oxydoréduction. L'utilisation de patates permet de mieux comprendre le fonctionnement de ce type de réaction et d'évaluer différents facteurs pouvant limiter la  différence de potentiel produite tel que le matériau des électrodes, le positionnement des fils ainsi que le temps d'insertion dans la patate. Ce rapport partiel comporte les résultats et observations faites pendant l'expérience, une analyse sous forme de questions et un retour sur les objectifs en conclusion.
 
 On remarque qu'il est en effet possible d'étudier le fonctionnement d'une pile d'oxydoréduction à l'aide d'une patate et de tester l'impact de plusieurs facteurs. L'expérience permet de constater que le matériau des électrodes vient grandement affecter la tension produite; la combinaison d'électrodes de zinc et d'acier inoxydable permet d'obtenir la plus grande différence de potentiel, soit environ 600 mV, tandis que la combinaison d'électrodes d'acier et d'aluminium ne provoque aucune différence de potentiel. On remarque également que la différence de potentiel générée chute avec le temps puisque les réactifs  disponibles pour la réaction sont consommés. La dernière partie de l'expérience, où la résistance d'une résistance de 1000 ohms a été mesurée, a permis de réaliser qu'à de si petites tensions, l'incertitude relative est très grande et la résistance des fils et d'appareils tel de que le module d'acquisition ne sont plus négligeables. Il pourrait être intéressant de refaire une expérience similaire avec d'autres aliments pour voir si certains permettent d'obtenir une plus grande tension ce qui permettrait de diminuer les pertes de même que l'incertitude sur les différentes mesures.
