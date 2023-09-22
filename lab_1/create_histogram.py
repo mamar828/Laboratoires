@@ -74,14 +74,14 @@ def create_histogram_from_lvm(
     lvm_file = lvm_read.read(file_path)
     if len(lvm_file[0]["data"][0]) == 2:
         y_data = np.transpose(lvm_file[0]["data"][:, 0]).squeeze()
-        tension_1 = np.transpose(lvm_file[0]["data"][:, 0]).squeeze()
-        tension_2 = np.transpose(lvm_file[0]["data"][:, 1]).squeeze()
-        intensity = tension_2 / 12
-        resistance = tension_1/intensity
-        print(resistance)
-        print(np.average(resistance), np.std(resistance), np.median(resistance))
-        fig, arr = plt.subplots(1, 1, figsize=(8, 6))
-        arr.hist(resistance, bins=25)
+        # tension_1 = np.transpose(lvm_file[0]["data"][:, 0]).squeeze()
+        # tension_2 = np.transpose(lvm_file[0]["data"][:, 1]).squeeze()
+        # intensity = tension_2 / 12
+        # resistance = tension_1/intensity
+        # print(resistance)
+        # print(np.average(resistance), np.std(resistance), np.median(resistance))
+        # fig, arr = plt.subplots(1, 1, figsize=(8, 6))
+        # arr.hist(resistance, bins=25)
         plt.show()
     else:
         y_data = np.transpose(lvm_file[0]["data"]).squeeze()
@@ -99,7 +99,9 @@ def create_histogram_from_lvm(
         arr.scatter(x_data, y_data)
     elif histogram:
         fig, arr = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))
-        arr[0].hist(y_data, bins=25)
+        arr.hist(y_data, bins=25)
+        arr.set_xlabel('Voltage [V]')
+        arr.set_ylabel('Number of values [-]')
     else:
         return
 
@@ -122,29 +124,29 @@ def create_histogram_from_lvm(
     terminate_figure(fig=fig, path_to_save=path, show=show)
 
 
+# create_histogram_from_lvm(
+#     "data/20230919_mesures_resistances_3.lvm",
+#     histogram=True,
+#     point_cloud=True,
+#     show=False,
+#     path_to_save_folder=None,
+# )
 create_histogram_from_lvm(
-    "data/20230919_mesures_resistances_3.lvm",
+    "data/20230919_mesures_0.05_nothing.lvm",
     histogram=True,
-    point_cloud=True,
+    point_cloud=False,
     show=False,
-    path_to_save_folder=None,
+    path_to_save_folder="save_fig",
+    filename='histogram_nothing.pdf'
 )
-# create_histogram_from_lvm(
-#     "data/20230919_mesures_0.05_nothing.lvm",
-#     histogram=True,
-#     point_cloud=True,
-#     show=False,
-#     path_to_save_folder="save_fig",
-#     filename='25_bins_nothing.pdf'
-# )
-# create_histogram_from_lvm(
-#     "data/20230919_mesures_smol_patate_inox_alu.lvm",
-#     histogram=True,
-#     point_cloud=True,
-#     show=False,
-#     path_to_save_folder="save_fig",
-#     filename='25_bins_smol_inox_alu.pdf'
-# )
+create_histogram_from_lvm(
+    "data/20230919_mesures_smol_patate_inox_alu.lvm",
+    histogram=True,
+    point_cloud=False,
+    show=False,
+    path_to_save_folder="save_fig",
+    filename='histogram_inox_alu.pdf'
+)
 # create_histogram_from_lvm(
 #     "data/20230919_mesures_smol_patate_zinc_inox.lvm",
 #     histogram=True,
