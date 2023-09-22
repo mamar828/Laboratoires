@@ -11,7 +11,7 @@ start = datetime.now()
 while True:
     coughs = input(f"coughs? ({number_of_coughs} to date)")
     moment = datetime.now() - start
-    out_file.write(f"{coughs} coughs at time {moment} \n")
+    out_file.write(f"coughs at time {moment} \n")
     if coughs == "yeet":
         break
     number_of_coughs += 1
