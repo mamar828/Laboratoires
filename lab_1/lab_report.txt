@@ -82,7 +82,7 @@ Q2.2 Si oui,pourquoi en est-il ainsi?
 
 L'acier est un alliage constitué principalement de fer et de carbone et ces deux éléments n'ont pas la même
 électronégativité que l'aluminium. On remarque donc que la tension fluctuant autour de zéro est due au fait que l'acier
-est oxydé et donc que la réaction d'oxydo-réduction ne peut pas se produire. En l'absence de réaction chimique, aucun
+est oxydé et donc que la réaction d'oxydoréduction ne peut pas se produire. En l'absence de réaction chimique, aucun
 électron n'est libéré ce qui fait en sorte qu'aucun courant ne circule dans le fil électrique et qu'il n'y a pas de
 différence de potentiel entre les deux tiges.
 
@@ -100,7 +100,7 @@ valeur centrale, soit zéro, est la valeur la plus fréquente.
 
  ----------------------------------------------- INSERT GRAPHICS -----------------------------------------------
 
-Q4  À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de
+Q4 À partir des mesures de l’étape i), calculez la valeur de la grosse résistance en utilisant une évaluation de
 Type A de l’incertitude tel que présentée dans l’introduction aux bases de la métrologie. Concrètement, divisez la
 colonne tension par la colonne courant pour obtenir une distribution de la mesure de résistance. Puis, comparez la
 moyenne et la médiane de cette distribution de résistance.
@@ -109,25 +109,41 @@ N.B. Dans cette situation instable, il vaut mieux définir un intervalle d’in
 3 l’écart type σ de votre distribution de données.
 
 La valeur moyenne de notre distribution est de 431.7455295242198 Ohm avec un écart-type de 177.23900145139626 Ohm, ce
-qui signifie que, une fois trois écart-types considérés pour l'incertitude, une valeur de (400 ± 600) Ohm. L'incertitude
-à étée arrondie à la valeur suppérieur du premier chiffre significatif afin de garantir une bonne caractérisation des
-mesures et de s'assurer que l'incertitude n'est pas sous-estimée. La médiane de notre distribution est de
-411.43093922651934 ce qui implique une distribution relativement symétrique des valeurs obtenue. Bien que dans les
-limites de l'interval pour la valeur expérimentale, il y un croisement des valeurs expérimentales et de référence,
-signifiant l'exactitude de la mesure expérimentale.
+qui signifie que, une fois trois écart-types considérés pour l'incertitude, une valeur de (400 ± 600) Ohm.
+L'incertitude à été arrondie à la valeur suppérieure du premier chiffre significatif afin de garantir une bonne 
+caractérisation des mesures et de s'assurer que l'incertitude n'est pas sous-estimée. La médiane de notre distribution
+est de 411.43093922651934 ce qui implique une distribution relativement symétrique des valeurs obtenues. Bien que dans
+les limites de l'intervalle pour la valeur expérimentale, il y un croisement des valeurs expérimentales et de
+référence, signifiant l'exactitude de la mesure expérimentale.
 
-Q5  Laquelle ou lesquelles des questions précédentes peuvent être répondues en préparation avant le laboratoire ?
+Q5 Laquelle ou lesquelles des questions précédentes peuvent être répondues en préparation avant le laboratoire ?
 ▶ Q1.1 ▶ Q1.2 ▶ Q1.3 ▶ Q2.1 ▶ Q2.2 ▶ Q3 ▶ Q4
 
 Q2.1 et Q2.2 peuvent être répondues théoriquement avant le laboratoire avec des connaissances simples des réactions
 d'oxydoréduction.
 
-Q6  Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
+Q6 Sections de rapport - Introduction & Conclusion : Écrivez en moins de 350 mots (combinés) l’introduction et la
 conclusion d’un rapport scientifique portant sur l’ensemble du laboratoire.
 
+Les piles électriques modernes permettent bien évidemment de fournir une source d'énergie électrique et sont
+indispensables dans l'industrie et la vie d'aujourd'hui. On distingue deux types de batteries, soit les batteries
+primaires, par exemple les batteries alcalines, qui doivent être disposées une fois utilisées et les batteries
+secondaires, par exemple les batteries lithium-ion, qui peuvent être rechargées une fois vidées. Ces types de batterie
+sont bien connus, mais ce qui est bien moins connu est l'utilisation d'autres matières pour former des piles, notamment
+des légumes, voire des patates, en utilisant une réaction d'oxydoréduction. L'utilisation de patates permet de mieux
+comprendre le fonctionnement de ce type de réaction et d'évaluer différents facteurs pouvant limiter la différence de
+potentiel produite tel que le matériau des électrodes, le positionnement des fils ainsi que le temps d'insertion dans
+la patate. Ce rapport partiel comporte les résultats et observations faites pendant l'expérience, une analyse sous
+forme de questions et un retour sur les objectifs en conclusion.
 
-
-
-
-
-
+On remarque qu'il est en effet possible d'étudier le fonctionnement d'une pile d'oxydoréduction à l'aide d'une patate
+et de tester l'impact de plusieurs facteurs. L'expérience permet de constater que le matériau des électrodes vient
+grandement affecter la tension; la combinaison d'électrodes de zinc et d'inox permet d'obtenir la plus grande
+différence de potentiel, soit environ 600 mV, tandis que la combinaison d'électrodes d'acier et d'aluminium ne provoque
+aucune différence de potentiel. On remarque également que la différence de potentiel générée chute avec le temps
+puisque la réaction a besoin de nouveaux réactifs pour se produire. La dernière partie de l'expérience, où la
+résistance d'une résistance de 1000 ohms a été mesurée, a permis de réaliser qu'à de si petites différences de
+potentiel, l'incertitude relative est très grande et la résistance des fils et d'appareils tel de que le module
+d'acquisition ne sont plus négligeables. Il pourrait être intéressant de refaire une expérience similaire avec d'autres
+aliments pour voir si certains permettent d'obtenir une plus grande tension ce qui permettrait de diminuer les pertes
+et donc l'incertitude sur les différentes mesures.
