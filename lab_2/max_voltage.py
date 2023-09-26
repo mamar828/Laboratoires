@@ -1,9 +1,6 @@
 import numpy as np
 
 
-
-# Max voltage calculation
-
 resistances = np.array([
     12, 270, 560, 100e3, 1e6
 ])
