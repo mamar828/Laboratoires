@@ -1,3 +1,11 @@
+"""
+This files computes the maximum voltage through resitances given a condition of maximum power dispersed .
+
+Date created : 26/09/2023
+    by : Mathieu Marquis
+Date last modified : 26/09/2023
+    by : Félix Desroches & Mathieu Marquis
+"""
 import numpy as np
 
 
