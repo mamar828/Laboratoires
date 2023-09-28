@@ -4,16 +4,16 @@ time_list = []
 number_of_coughs = 0
 out_file = open(f"coughs_{datetime.now()}.txt", "a")
 start = datetime.now()
-out_file.write(f"[")
+out_file.write(f"[\n")
 while True:
     coughs = input(f"coughs? ({number_of_coughs} total)")
     moment = datetime.now() - start
-    if coughs == "yeet":
+    if coughs == "stop":
         out_file.write(f"]")
         break
     else:
         out_file.write(f"[{number_of_coughs+1}, {moment.total_seconds()}]")
-    out_file.write(f"\n")
+    out_file.write(f",\n")
     number_of_coughs += 1
 
 out_file.close()
