@@ -23,6 +23,17 @@ Définition des autres symboles : Vvolt − tension mesurée par le voltmètr
 ▶ Rvolt = Vamp / (Iamp - Vvolt/Rch)
 ▶ Rvolt = Vvolt / (Iamp - Vvolt/Rch)
 
+R_VI_V = R_{Ch}I_{Ch} = V_{Ch}=V_{V}\\
+I_A = I_V+I_{Ch}\\
+R_V\left( I_A-I_{Ch}\right) = R_{Ch}I_{Ch}\\
+R_V = \frac{R_{Ch}I_{Ch}}{\left( I_A-I_{Ch}\right)}\\
+R_V = \frac{R_{Ch}}{\left(\frac{I_A}{I_{Ch}}-1\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{I_{Ch}R_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{V_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{V_V}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{V_V}{\left(I_A-\frac{V_V}{R_{Ch}}\right)}\\
+Rvolt = Vvolt / (Iamp - Vvolt/Rch)
+
 Q2.4 Quelle est la résistance interne de l’ampèremètre? (PAS de texte, seulement le résultat de mesure qui comprend toujours l’incertitude.)
 
 Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question précédente.
