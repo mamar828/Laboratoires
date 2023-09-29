@@ -17,9 +17,26 @@ Définition des autres symboles : Vvolt − tension mesurée par le voltmètr
 ▶ Rvolt = Vvolt / (Iamp - Vvolt/Ramp)
 ▶ Rvolt = Vamp / (Iamp - Vvolt/Rch)
 ▶ Rvolt = Vvolt / (Iamp - Vvolt/Rch)
+
+R_VI_V = R_{Ch}I_{Ch} = V_{Ch}=V_{V}\\
+I_A = I_V+I_{Ch}\\
+R_V\left( I_A-I_{Ch}\right) = R_{Ch}I_{Ch}\\
+R_V = \frac{R_{Ch}I_{Ch}}{\left( I_A-I_{Ch}\right)}\\
+R_V = \frac{R_{Ch}}{\left(\frac{I_A}{I_{Ch}}-1\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{I_{Ch}R_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{V_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{1}{\left(\frac{I_A}{V_V}-\frac{1}{R_{Ch}}\right)}\\
+R_V = \frac{V_V}{\left(I_A-\frac{V_V}{R_{Ch}}\right)}\\
+Rvolt = Vvolt / (Iamp - Vvolt/Rch)
+
 Q2.4 Quelle est la résistance interne de l’ampèremètre? (PAS de texte, seulement le résultat de mesure qui comprend toujours l’incertitude.)
 Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question précédente.
 Q3 Les mesures en circuit fermé avec la pomme de terre au premier laboratoire étaient-elles biaisées en ▶ tension ou en ▶ courant ?
 Q4 Identifiez les étapes dans chaque partie de la section "Manipulations" du pro- tocole qui peuvent être faites en préparation avant le laboratoire :
 ▶ 1a) ▶ 1b) ▶ 1c) ▶ 1d) ▶ 2a) ▶ 2b) ▶ 2c) ▶ 2d) ▶ 2e) ▶ 2f) ▶ 2g) ▶ 2h)
+1b)
+2b)
+2c)
+2d)
+
 Q5 Section de rapport - Méthodes expérimentales : Écrivez en moins de 200 mots les méthodes expérimentales d’un rapport scientifique portant sur la première partie de ce laboratoire. C’est en effet sur la Partie 1 — Mesures biaisées et non biaisées seulement.
