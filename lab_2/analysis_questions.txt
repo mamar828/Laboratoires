@@ -21,7 +21,7 @@ Q2.2 Les mesures de courant non biaisé ont mené à des calculs de résistance.
 ----------hautes
 
 Q2.3 Laquelle des expressions suivantes représente la résistance interne Rvolt d’un voltmètre non idéal dans le circuit de la figure 1 ?
-Définition des autres symboles : Vvolt − tension mesurée par le voltmètre, Ivolt − courant circulant dans le voltmètre non idéal, Vamp − tension aux bornes de l’am- pèremètre non idéal, Iamp − courant mesuré par l’ampèremètre, Ramp − résistance interne de l’ampèremètre.
+Définition des autres symboles : Vvolt − tension mesurée par le voltmètre, Ivolt − courant circulant dans le voltmètre non idéal, Vamp − tension aux bornes de l’ampèremètre non idéal, Iamp − courant mesuré par l’ampèremètre, Ramp − résistance interne de l’ampèremètre.
 ▶ Rvolt = Rch−Ramp
 ▶ Rvolt = Rch+Ramp
 ▶ Rvolt = Ramp+Rvolt−Rch
@@ -31,8 +31,8 @@ Définition des autres symboles : Vvolt − tension mesurée par le voltmètr
 
 R_VI_V = R_{Ch}I_{Ch} = V_{Ch}=V_{V}\\
 I_A = I_V+I_{Ch}\\
-R_V\left( I_A-I_{Ch}\right) = R_{Ch}I_{Ch}\\
-R_V = \frac{R_{Ch}I_{Ch}}{\left( I_A-I_{Ch}\right)}\\
+R_V\left(I_A-I_{Ch}\right) = R_{Ch}I_{Ch}\\
+R_V = \frac{R_{Ch}I_{Ch}}{\left(I_A-I_{Ch}\right)}\\
 R_V = \frac{R_{Ch}}{\left(\frac{I_A}{I_{Ch}}-1\right)}\\
 R_V = \frac{1}{\left(\frac{I_A}{I_{Ch}R_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
 R_V = \frac{1}{\left(\frac{I_A}{V_{Ch}}-\frac{1}{R_{Ch}}\right)}\\
@@ -47,7 +47,8 @@ Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question 
 ----------Avec l'expression R_A = \frac{\Delta V}{I_A} - R_{Ch}, nous utilisons les règles simples tel que : \Delta R_A = \left(\frac{\Delta \Delta V}{\Delta V} + \frac{\Delta I_A}{I_A}\right) + \Delta R_{Ch}.
 
 Q3 Les mesures en circuit fermé avec la pomme de terre au premier laboratoire étaient-elles biaisées en ▶ tension ou en ▶ courant ?
-----------Dans la deuxième partie de l'expérience les données mesurées sont biaisées en tension étant donné que le deuxième voltmètre permet de mesurer le courant, qui est le même dans les deux résistances, mais celui-ci vient affecter la différence de potentiel au bornes du voltmètre ai0.
+----------tension
+Dans la deuxième partie de l'expérience, les données mesurées sont biaisées en tension étant donné que le deuxième voltmètre permet de mesurer le courant, qui est le même dans les deux résistances, mais celui-ci vient affecter la différence de potentiel au bornes du voltmètre ai0.
 
 Q4 Identifiez les étapes dans chaque partie de la section "Manipulations" du pro- tocole qui peuvent être faites en préparation avant le laboratoire :
 ▶ 1a) ▶ 1b) ▶ 1c) ▶ 1d) ▶ 2a) ▶ 2b) ▶ 2c) ▶ 2d) ▶ 2e) ▶ 2f) ▶ 2g) ▶ 2h)
