@@ -354,7 +354,7 @@ fig, axe = plt.subplots(figsize=(16, 10))
 axe.plot(cough_data[:, 1], cough_data[:, 1] * m + b, c="#FF2F3F", linewidth=3)
 axe.scatter(cough_data[:, 1], cough_data[:, 0], c="#000000", s=10)
 
-axe.legend(["Linear regression", "Cumulative coughs curve"], fontsize=16)
+axe.legend(["Linear regression", "Cumulative coughs"], fontsize=16)
 
 axe.text(300, 110, f"f(t) = {m:.4f}t + {b:.4f}", {"c": "#000000", 'fontsize': 16})
 axe.text(300, 95, f"$R^2$: {r2:.4f}", {"c": "#000000", 'fontsize': 16})
