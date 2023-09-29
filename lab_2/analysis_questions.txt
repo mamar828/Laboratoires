@@ -40,7 +40,7 @@ R_V = \frac{V_V}{\left(I_A-\frac{V_V}{R_{Ch}}\right)}\\
 ----------Rvolt = Vvolt / (Iamp - Vvolt/Rch)
 
 Q2.4 Quelle est la résistance interne de l’ampèremètre? (PAS de texte, seulement le résultat de mesure qui comprend toujours l’incertitude.)
-----------6.660083914	± 0.3371057716
+----------\SI{6.7(4)}{\Omega}
 
 Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question précédente.
 ----------Avec l'expression R_A = \frac{\Delta V}{I_A} - R_{Ch}, nous utilisons les règles simples tel que : \Delta R_A = \left(\frac{\Delta \Delta V}{\Delta V} + \frac{\Delta I_A}{I_A}\right) + \Delta R_{Ch}.
