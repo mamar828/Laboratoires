@@ -1,6 +1,7 @@
 Q1
 Q1.1 À partir des résultats de l’étape a) de la première partie, présentez dans un même tableau les résultats de mesure de résistance prises à deux fils et à quatre fils ainsi que le pourcentage d’écart entre chacune de ces mesures et la valeur nominale de référence correspondante. Assurez-vous d’inclure les incertitudes et de présenter leur justification en légende. Les pourcentages d’écart représentent des erreurs systématiques par rapport aux valeurs de référence, ce ne sont donc pas des incertitudes. Toutefois, l’incertitude sur ces erreurs doit être estimée !
 
+DONE !
 
 Q1.2 ▶ Vrai ou ▶ Faux: Le pourcentage d’écart pour la mesure à deux fils s’éloigne de plus en plus de celle à quatre fils avec l’augmentation de la résistance.
 ----------Faux
