@@ -1,14 +1,19 @@
-Q1
-Q1.1 À partir des résultats de l’étape a) de la première partie, présentez dans un même tableau les résultats de mesure de résistance prises à deux fils et à quatre fils ainsi que le pourcentage d’écart entre chacune de ces mesures et la valeur nominale de référence correspondante. Assurez-vous d’inclure les incertitudes et de présenter leur justification en légende. Les pourcentages d’écart représentent des erreurs systématiques par rapport aux valeurs de référence, ce ne sont donc pas des incertitudes. Toutefois, l’incertitude sur ces erreurs doit être estimée !
+Q1 À partir des résultats de l’étape a) de la première partie,
+Q1.1 présentez dans un même tableau les résultats de mesure de résistance prises à deux fils et à quatre fils ainsi que le pourcentage d’écart entre chacune de ces mesures et la valeur nominale de référence correspondante. Assurez-vous d’inclure les incertitudes et de présenter leur justification en légende. Les pourcentages d’écart représentent des erreurs systématiques par rapport aux valeurs de référence, ce ne sont donc pas des incertitudes. Toutefois, l’incertitude sur ces erreurs doit être estimée !
+
 Q1.2 ▶ Vrai ou ▶ Faux: Le pourcentage d’écart pour la mesure à deux fils s’éloigne de plus en plus de celle à quatre fils avec l’augmentation de la résistance.
+
 Q1.3 Sélectionnez le ou les énoncé(s) qui explique(nt) correctement pourquoi la mesure de résistance à deux fils avec le ohmmètre est biaisée :
 ▶ De nombreux bouts de fils coupés en biais peuvent être récupérés pour se fabriquer une cotte de maille.
 ▶ La résistance des deux fils s’ajoute à celle du composant résistif.
 ▶ Le ohmmètre est constitué d’une source indépendante et étalonnée de courant et d’un voltmètre qui mesure la chute de tension dans toute la boucle de circuit avec la résistance.
 ▶ Le ohmmètre est constitué d’une source indépendante et étalonnée de tension et d’un ampèremètre qui mesure le courant dans toute la boucle de circuit avec la résistance.
+
 Q2 Dans votre analyse des résultats des étapes c) et d) de la première partie,
 Q2.1 Les mesures de tension non biaisée ont mené à des calculs de résistance. Est-ce que vos résultats de calculs étaient plus justes lorsque les résistances étaient ▶ élevées ou ▶ basses ?
+
 Q2.2 Les mesures de courant non biaisé ont mené à des calculs de résistance. Est-ce que vos résultats de calculs étaient plus justes lorsque les résistances étaient ▶ élevées ou ▶ basses ?
+
 Q2.3 Laquelle des expressions suivantes représente la résistance interne Rvolt d’un voltmètre non idéal dans le circuit de la figure 1 ?
 Définition des autres symboles : Vvolt − tension mesurée par le voltmètre, Ivolt − courant circulant dans le voltmètre non idéal, Vamp − tension aux bornes de l’am- pèremètre non idéal, Iamp − courant mesuré par l’ampèremètre, Ramp − résistance interne de l’ampèremètre.
 ▶ Rvolt = Rch−Ramp
@@ -17,9 +22,16 @@ Définition des autres symboles : Vvolt − tension mesurée par le voltmètr
 ▶ Rvolt = Vvolt / (Iamp - Vvolt/Ramp)
 ▶ Rvolt = Vamp / (Iamp - Vvolt/Rch)
 ▶ Rvolt = Vvolt / (Iamp - Vvolt/Rch)
+
 Q2.4 Quelle est la résistance interne de l’ampèremètre? (PAS de texte, seulement le résultat de mesure qui comprend toujours l’incertitude.)
+
 Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question précédente.
+
 Q3 Les mesures en circuit fermé avec la pomme de terre au premier laboratoire étaient-elles biaisées en ▶ tension ou en ▶ courant ?
-Q4 Identifiez les étapes dans chaque partie de la section "Manipulations" du pro- tocole qui peuvent être faites en préparation avant le laboratoire :
+Dans la deuxième partie de l'expérience les données mesurées sont biaisées en tension étant donné que le deuxième voltmètre permet de mesurer le courant, qui est le même dans les deux résistances, mais celui-ci vient affecter la différence de potentiel au bornes du voltmètre ai0.
+
+Q4 Identifiez les étapes dans chaque partie de la section "Manipulations" du protocole qui peuvent être faites en préparation avant le laboratoire :
 ▶ 1a) ▶ 1b) ▶ 1c) ▶ 1d) ▶ 2a) ▶ 2b) ▶ 2c) ▶ 2d) ▶ 2e) ▶ 2f) ▶ 2g) ▶ 2h)
+1b), 2b), 2c).
+
 Q5 Section de rapport - Méthodes expérimentales : Écrivez en moins de 200 mots les méthodes expérimentales d’un rapport scientifique portant sur la première partie de ce laboratoire. C’est en effet sur la Partie 1 — Mesures biaisées et non biaisées seulement.
