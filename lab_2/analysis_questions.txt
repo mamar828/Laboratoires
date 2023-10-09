@@ -41,9 +41,10 @@ R_V = \frac{V_V}{\left(I_A-\frac{V_V}{R_{Ch}}\right)}\\
 ----------Rvolt = Vvolt / (Iamp - Vvolt/Rch)
 
 Q2.4 Quelle est la résistance interne de l’ampèremètre? (PAS de texte, seulement le résultat de mesure qui comprend toujours l’incertitude.)
-----------\SI{6.7(4)}{\Omega}
+----------\SI{6.660(5)}{\Omega}
 
 Q2.5 Présentez votre démarche de calcul d’incertitude de la sous-question précédente.
+SEE PAGES DOCUMENT
 ----------Avec l'expression R_A = \frac{\Delta V}{I_A} - R_{Ch}, nous utilisons les règles simples tel que : \Delta R_A = \left(\frac{\Delta \Delta V}{\Delta V} + \frac{\Delta I_A}{I_A}\right) + \Delta R_{Ch}.
 
 Q3 Les mesures en circuit fermé avec la pomme de terre au premier laboratoire étaient-elles biaisées en ▶ tension ou en ▶ courant ?
@@ -55,4 +56,5 @@ Q4 Identifiez les étapes dans chaque partie de la section "Manipulations" du p
 ----------1b), 2b), 2c)
 
 Q5 Section de rapport - Méthodes expérimentales : Écrivez en moins de 200 mots les méthodes expérimentales d’un rapport scientifique portant sur la première partie de ce laboratoire. C’est en effet sur la Partie 1 — Mesures biaisées et non biaisées seulement.
-Afin de mesurer le biais, il est essentiel de mesurer la résistance des multiples résistances utilisées avec la fonction ohmmètre du multimètre à 6 1/2 chiffres (), et ce, en utilisant deux fils. Une fois les mesures biaisées prises, il est nécessaire d'obtenir des valeurs non biaisées en utilisant la méthode à quatre fils. Une fois les mesures biaisées et non biaisées prises, il faut effectuer des étapes équivalentes pour la différence de potentiel et l'intensité du courant passant dans ces mêmes résistances. Afin d'éviter les bris de matériel, il faut préalablement déterminer la tension maximale pouvant être observée aux bornes de chaque résistance avant que ces dernières dispersent plus de 10% de leur puissance maximale. En ne dépassant pas la tension maximale calculée, des mesures de tension non biaisées et de courant biaisées doivent être prises avec le circuit montré dans la figure (1) ainsi que des mesures de tension biaisées et de courant non biaisées avec le circuit montré dans la figure (2). Dans ces deux prises de mesures, le multimètre à 4 1/2 chiffres () permet la mesure de la différence de potentiel et le multimètre à 6 1/2 chiffres permet la mesure du courant.
+SEE PAGES DOCUMENT
+Afin d'éviter les bris de matériel, il faut préalablement déterminer la tension maximale pouvant être observée aux bornes de chaque résistance avant que ces dernières dispersent plus de 10% de leur puissance maximale avec l'équation: V_{max}=\sqrt{P_{max}R}. Par la suite, la résistance des multiples résistances utilisées est mesurée avec la fonction ohmmètre du multimètre à 6 ½ chiffres (Agilent 34401A 6 ½ Digit Multimeter), et ce, en utilisant deux fils pour la mesure biaisée et quatre fils pour la mesure non biaisée. Ensuite, en utilisant le multimètre à 4 ½ chiffres (Agilent U3401A 4 ½ Digit Dual Display Multimeter) comme voltmètre et le multimètre à 6 ½ chiffres comme ampèremètre, des valeurs de différence de potentiel et de courant sont mesurées pour chaque résistance. Avec la configuration de la figure 1, des mesures de tension non biaisée et de courant biaisé sont mesurées alors qu'avec la configuration de la figure 2, des mesures de tension biaisée et de courant non biaisé sont obtenues.
