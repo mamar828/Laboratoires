@@ -4,16 +4,22 @@ Q1.1 d’un condensateur idéal ?
 ▶ 1000 Ω
 ▶ ∞ Ω
 
+\infty
+
 Q1.2 d’une bobine d’inductance idéale ?
 ▶ 0 Ω
 ▶ 1000 Ω
 ▶ ∞ Ω
+
+0
 
 Indice : Ces deux composants remplissent une fonction dans un circuit à courant alternatif, car leur relation entre tension et courant dépend d’un taux de VARIATION par rapport au temps. Ils ne servent donc à rien en courant continu et il s’agit de comprendre physiquement pourquoi.
 
 Q2 La courbe i–v que vous avez mesurée pour un de ces deux composants ne correspond pas du tout au modèle idéal. De quel composant s’agit-il et quelle est la cause d’erreur expliquant cette déviation ?
 ▶ Le condensateur puisqu’un courant continu ne peut pas le traverser.
 ▶ La bobine d’inductance puisque la résistance n’est pas nulle et provient essentiellement de la résistance interne du multimètre qui change à chaque échelle de mesure.
+
+Le solénoïde
 
 Q3 Pour le transistor, faites un graphique superposant l’ensemble des courbes i–v dont vous avez fait l’acquisition pendant le laboratoire. Indiquez explicitement au-dessus de chaque courbe la valeur de courant de saturation isat, i.e. le plateau maximal de courant (avec incertitude par rapport à l’horizontale) qui entre dans le collecteur ice.
 
@@ -23,15 +29,19 @@ Q4 Comparez les courbes i–v des diodes "standard" et Zener. Pourquoi avons-nou
 ▶ La diode Zener n’est pas de la bonne couleur.
 ▶ La diode "standard" ne peut pas opérer près de sa tension de claquage en polarité directe.
 
+standard pas assez juste (fuck la couleur, on a pas observé en fonction du temps pis on la tension claquage c'est polarité inverse)
+
 Q5 Section de rapport - Analyse des résultats & discussion : Écrivez en moins de 400 mots une partie d’analyse des résultats et discussion d’un rapport scientifique sur la caractérisation et l’interprétation du comportement de la diode standard. Dans un TEXTE CONTINU, présentez et/ou discutez les éléments suivants tout en poursuivant l’utilisation du vocabulaire international de métrologie (VIM) pour faire des comparaisons claires :
 
-— graphique de résistance dynamique RD = dv mesurée en fonction de la tension (faites une différentiation numérique pour traiter directement vos données mesurées),
-— analyse des cas limites de RD mesurée en les comparant aux valeurs attendues selon le modèle de la diode idéale,
-— analyse de la tension seuil Vd minimale qui fait circuler le courant dans la diode : comparaison de la valeur de référence versus le comportement observé,
+— graphique de résistance dynamique R_D = \frac{dv}{di} mesurée en fonction de la tension (faites une différentiation numérique pour traiter directement vos données mesurées),
+— analyse des cas limites de R_D mesurée en les comparant aux valeurs attendues selon le modèle de la diode idéale,
+— analyse de la tension seuil V_d minimale qui fait circuler le courant dans la diode : comparaison de la valeur de référence versus le comportement observé,
 — discussion de la validité du modèle de la diode idéale en général,
-— proposition d’un modèle un peu mieux adapté aux mesures, soit l’équation de Shockley pour la diode: i(v)=i(e^(v/v0)−1) où i_0 et v_0 sont des constantes ajustables,
+— proposition d’un modèle un peu mieux adapté aux mesures, soit l’équation de Shockley pour la diode: i(v)=i_0(e^(v/v_0)−1) où i_0 et v_0 sont des constantes ajustables,
 — graphique de la courbe i–v mesurée (avec des points) et de l’équation de Shockley ajustée à ces données (avec une ligne) ; cet ajustement (régression, fit) de courbe se fait avec des outils informatiques, par exemple Curve Fitting Toolbox de MATLAB ou scipy.optimize.curve_fit de Python,
 — analyse de la correspondance entre la fonction ajustée et les résultats de mesure sur ce graphique,
 — interprétation des résultats au mieux de vos connaissances sur la phy- sique des diodes.
 
 Pour ce dernier item, d’autres sources que les notes de cours, allant de sites Internet professionnels à la bibliothèque qui existe encore(!), peuvent être utilisées pour aller plus en profondeur dans votre discussion. Il n’est pas nécessaire de maîtriser toute la physique de la matière condensée à ce point-ci bien sûr, veuillez respecter la limite de mots pour cette question.
+
+
