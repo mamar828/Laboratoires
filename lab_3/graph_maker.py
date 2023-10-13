@@ -73,12 +73,13 @@ def make_figures_for_parts_abce():
         plot_graph(read_lvm(data), params=params)
         save_figure(save_path, show=True)
 
-make_figures_for_parts_abce()
+# make_figures_for_parts_abce()
 
 def make_figure_for_part_d():
     zero_to_six = read_lvm("lab_3/data/part_3_d_0to6.lvm")
     zero_to_one = read_lvm("lab_3/data/part_3_d_0to1.lvm")
     global_array = np.concatenate(((zero_to_six * (-1))[::-1], zero_to_one))
+    np.save("lab_3/data/concatenated_part_4.npy", global_array)
     params = {
         "title": "Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard",
         "xlabel": "Différence de potentiel $∆V$ (V)", 
@@ -87,7 +88,7 @@ def make_figure_for_part_d():
     plot_graph(global_array, params)
     save_figure("lab_3/graphs/part_3_d.png", show=True)
 
-make_figure_for_part_d()
+# make_figure_for_part_d()
 
 def make_figures_for_part_4():
     voltage_be = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2]
@@ -103,5 +104,21 @@ def make_figures_for_part_4():
         save_figure(f"lab_3/graphs/part_4_{voltage}V.png", show=True)
 
 # make_figures_for_part_4()
+
+def make_figure_for_dvdi():
+    array = np.load("lab_3/data/concatenated_part_4.npy")
+    diff_array = np.diff(array, n=1, axis=0)
+    plotted_array = np.stack((array[:-1,0], diff_array[:,1]/diff_array[:,0]), axis=1)
+    params = {
+        "title": ("Résistance dynamique $R_D$ en fonction de la différence\n" + 
+                  "de potentiel aux bornes d'une diode standard"),
+        "xlabel": "Différence de potentiel $∆V$ (V)", 
+        "ylabel": "Résistance dynamique $R_D$ (Ω)"
+    }
+    plot_graph(plotted_array, params)
+    save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
+
+# make_figure_for_dvdi()
+
 
 
