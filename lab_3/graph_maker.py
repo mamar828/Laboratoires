@@ -13,9 +13,15 @@ def read_lvm(file_path: str) -> np.ndarray:
         os.remove(f"{file_path}.pkl")
     except:
         pass
-    print(file)
-    print(len(file))
-    return file[0]["data"]
+    number_of_data_arrays = len(file) - 11      # Get the number of arrays in the same .lvm file
+    arrays = []
+    for i in range(number_of_data_arrays):      # Iterate to group all the arrays
+        arrays.append(file[i]["data"])
+    
+    if len(arrays) == 1:                        # Crop if the list contains a single element
+        return arrays[0]
+    else:
+        return arrays
 
 def plot_graph(array: np.ndarray, params: dict=None):
     """
@@ -39,44 +45,63 @@ def save_figure(file_path: str, show: bool=False):
         plt.show(block=True)
 
 
-plot_files = [
-    ["lab_3/data/part_3_a.lvm", "lab_3/graphs/part_3_a.png", {
-        "title": "Différence de potentiel aux bornes \nd'une résistance de 1.2 kΩ en fonction du courant",
-        "xlabel": "Différence de potentiel $∆V$ (V)", "ylabel": "Courant $I$ (A)"}],
-    ["lab_3/data/part_3_b.lvm", "lab_3/graphs/part_3_b.png", {
-        "title": "Différence de potentiel aux bornes \nd'un condensateur de 1 μF en fonction du courant",
-        "xlabel": "Différence de potentiel $∆V$ (V)", "ylabel": "Courant $I$ (A)"}],
-    ["lab_3/data/part_3_c.lvm", "lab_3/graphs/part_3_c.png", {
-        "title": "Différence de potentiel aux bornes \nd'une bobine de 1 mH en fonction du courant",
-        "xlabel": "Différence de potentiel $∆V$ (V)", "ylabel": "Courant $I$ (A)"}],
-    ["lab_3/data/part_3_e.lvm", "lab_3/graphs/part_3_e.png", {
-     "title": "Différence de potentiel aux bornes \nd'une diode Zener branchée en sens inverse en fonction du courant",
-        "xlabel": "Différence de potentiel $∆V$ (V)", "ylabel": "Courant $I$ (A)"}]
-]
-
 def make_figures_for_parts_abce():
+    plot_files = [
+        ["lab_3/data/part_3_a.lvm", "lab_3/graphs/part_3_a.png", {
+            "title": "Courant en fonction de la différence de potentiel aux bornes \nd'une résistance de 1.2 kΩ",
+            "xlabel": "Différence de potentiel $∆V$ (V)",
+            "ylabel": "Courant $I$ (A)"
+        }],
+        ["lab_3/data/part_3_b.lvm", "lab_3/graphs/part_3_b.png", {
+            "title": "Courant en fonction de la différence de potentiel aux bornes \nd'un condensateur de 1 μF",
+            "xlabel": "Différence de potentiel $∆V$ (V)",
+            "ylabel": "Courant $I$ (A)"
+        }],
+        ["lab_3/data/part_3_c.lvm", "lab_3/graphs/part_3_c.png", {
+            "title": "Courant en fonction de la différence de potentiel aux bornes \nd'une bobine de 1 mH",
+            "xlabel": "Différence de potentiel $∆V$ (V)",
+            "ylabel": "Courant $I$ (A)"
+        }],
+        ["lab_3/data/part_3_e.lvm", "lab_3/graphs/part_3_e.png", {
+            "title": ("Courant en fonction de la différence de potentiel aux bornes \n" + 
+                      "d'une diode Zener branchée en sens inverse"),
+            "xlabel": "Différence de potentiel $∆V$ (V)",
+            "ylabel": "Courant $I$ (A)"
+        }]
+    ]
     for data, save_path, params in plot_files:
         plot_graph(read_lvm(data), params=params)
         save_figure(save_path, show=True)
 
-# make_figures_for_parts_abce()
+make_figures_for_parts_abce()
 
 def make_figure_for_part_d():
     zero_to_six = read_lvm("lab_3/data/part_3_d_0to6.lvm")
     zero_to_one = read_lvm("lab_3/data/part_3_d_0to1.lvm")
     global_array = np.concatenate(((zero_to_six * (-1))[::-1], zero_to_one))
     params = {
-        "title": "Différence de potentiel aux bornes \nd'une diode standard en fonction du courant",
+        "title": "Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard",
         "xlabel": "Différence de potentiel $∆V$ (V)", 
         "ylabel": "Courant $I$ (A)"
     }
     plot_graph(global_array, params)
     save_figure("lab_3/graphs/part_3_d.png", show=True)
 
-# make_figure_for_part_d()
+make_figure_for_part_d()
 
-# read_lvm("lab_3/data/part_4.lvm")
+def make_figures_for_part_4():
+    voltage_be = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2]
+    arrays = read_lvm("lab_3/data/part_4.lvm")
+    params = {
+        "xlabel": "Différence de potentiel $∆V$ (V)", 
+        "ylabel": "Courant $I$ (A)"
+    }
+    for voltage, array in zip(voltage_be, arrays):
+        params["title"] = (r"Courant $i_{ce}$ en fonction de la tension $v_{ce}$ pour une tension $v_{be}$ de " + 
+                           f"{voltage}V")
+        plot_graph(array, params=params)
+        save_figure(f"lab_3/graphs/part_4_{voltage}V.png", show=True)
 
-
+# make_figures_for_part_4()
 
 
