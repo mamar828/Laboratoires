@@ -24,12 +24,12 @@ Le solénoïde
 Q3 Pour le transistor, faites un graphique superposant l’ensemble des courbes i–v dont vous avez fait l’acquisition pendant le laboratoire. Indiquez explicitement au-dessus de chaque courbe la valeur de courant de saturation isat, i.e. le plateau maximal de courant (avec incertitude par rapport à l’horizontale) qui entre dans le collecteur i_{ce}.
 
 Q4 Comparez les courbes i–v des diodes "standard" et Zener. Pourquoi avons-nous choisi une diode Zener pour appliquer la fonction de réguler la tension ?
-▶ Le comportement de la tension d’une diode "standard" n’est pas suffisam- ment juste pour la fonction requise, soit de garder la tension constante pour différentes intensités du courant.
+▶ Le comportement de la tension d’une diode "standard" n’est pas suffisamment juste pour la fonction requise, soit de garder la tension constante pour différentes intensités du courant.
 ▶ Le branchement en polarité inverse d’une diode Zener est plus stable en fonction du temps qu’en polarité directe.
 ▶ La diode Zener n’est pas de la bonne couleur.
 ▶ La diode "standard" ne peut pas opérer près de sa tension de claquage en polarité directe.
 
-standard pas assez juste (fuck la couleur, on a pas observé en fonction du temps pis on la tension claquage c'est polarité inverse)
+standard pas assez juste (fuck la couleur, on a pas observé en fonction du temps pis on la tension claquage c'est polarité inverse) (oui tension claquage c'est polarité inverse, mais on observe dans le graphique pas la tension de claquage, mais la différence de potentiel seuil V_{seuil}, qui survient en polarité directe et qui est caractérisée par une soudaine augmentation du courant)
 
 Q5 Section de rapport - Analyse des résultats & discussion : Écrivez en moins de 400 mots une partie d’analyse des résultats et discussion d’un rapport scientifique sur la caractérisation et l’interprétation du comportement de la diode standard. Dans un TEXTE CONTINU, présentez et/ou discutez les éléments suivants tout en poursuivant l’utilisation du vocabulaire international de métrologie (VIM) pour faire des comparaisons claires :
 
