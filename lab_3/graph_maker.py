@@ -128,9 +128,13 @@ def make_figures_for_part_4():
             s=(r"$i_{sat}=$"+f"({int(round(i_sat_1000mV[0]*10**3, 0))} ± {int(round(i_sat_1000mV[1]*10**3, 0))}) mA"))
     ax.text(2, 0.195, c="c", 
             s=(r"$i_{sat}=$"+f"({round(i_sat_1200mV[0], 2)} ± {round(i_sat_1200mV[1], 2)}) A"))
-    save_figure("lab_3/graphs/part_4.png", show=True)
+    print(f"  0mV std: {np.std(arrays[0][:,1])}")
+    print(f"200mV std: {np.std(arrays[1][:,1])}")
+    print(f"400mV std: {np.std(arrays[2][1:,1])}")
+    # save_figure("lab_3/graphs/part_4.png", show=True)
+    plt.show()
 
-# make_figures_for_part_4()
+make_figures_for_part_4()
 
 def make_figure_for_dvdi():
     array = np.load("lab_3/data/concatenated_part_4.npy")
