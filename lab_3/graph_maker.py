@@ -79,20 +79,20 @@ def make_figures_for_parts_abce():
 def make_figure_for_part_d():
     zero_to_six = read_lvm("lab_3/data/part_3_d_0to6.lvm")
     zero_to_one = read_lvm("lab_3/data/part_3_d_0to1.lvm")
-    global_array = np.concatenate(((zero_to_six * (-1))[::-1], zero_to_one))
+    global_array = np.concatenate(((zero_to_six * (-1))[::-1], zero_to_one[1:,:]))
     np.save("lab_3/data/concatenated_part_4.npy", global_array)
     params = {
-        "title": "Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard",
+        "title": "Courant en fonction de la différence de potentiel aux bornes\nd'une diode standard",
         "xlabel": "Différence de potentiel $∆V$ (V)", 
         "ylabel": "Courant $I$ (A)"
     }
     plot_graph(global_array, params)
     save_figure("lab_3/graphs/part_3_d.png", show=True)
 
-# make_figure_for_part_d()
+make_figure_for_part_d()
 
 def make_figures_for_part_4():
-    arrays = read_lvm("lab_3/data/part_4_ok_23.lvm")
+    arrays = read_lvm("lab_3/data/part_4_ok_17.lvm")
     params = {
         "title": r"Courant $i_{ce}$ en fonction de la tension $v_{ce}$ pour différentes tensions $v_{be}$",
         "xlabel": r"Différence de potentiel $v_{ce}$ (V)", 
@@ -104,20 +104,32 @@ def make_figures_for_part_4():
     plt.plot(arrays[3][:,0], arrays[3][:,1], "y-", markersize=2, label=r"Tension $v_{be}=0.6$ V")
     plt.plot(arrays[4][:,0], arrays[4][:,1], "m-", markersize=2, label=r"Tension $v_{be}=0.8$ V")
     plt.plot(arrays[5][:,0], arrays[5][:,1], "k-", markersize=2, label=r"Tension $v_{be}=1.0$ V")
-    plt.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2, label=r"Tension $v_{be}=1.2$ V")
-
+    try:
+        plt.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2, label=r"Tension $v_{be}=1.2$ V")
+    except:
+        pass
     plt.title(params["title"])
     plt.xlabel(params["xlabel"])
     plt.ylabel(params["ylabel"])
     plt.legend(fontsize=7)
+
+    # Get the values of i_{sat}
+    i_sat_600mV  = np.mean(arrays[3][1:,1]), np.std(arrays[3][1:,1])
+    i_sat_800mV  = np.mean(arrays[4][4:,1]), np.std(arrays[4][4:,1])
+    i_sat_1000mV = np.mean(arrays[5][6:,1]), np.std(arrays[5][6:,1])
+    i_sat_1200mV = np.mean(arrays[6][8:,1]), np.std(arrays[6][8:,1])
+    plt.text(0.5, 0.4, "yoyoyo", ("Arial", 12))
     plt.show()
-    
+
 # make_figures_for_part_4()
 
 def make_figure_for_dvdi():
     array = np.load("lab_3/data/concatenated_part_4.npy")
+    print(array[115:125,:])
     diff_array = np.diff(array, n=1, axis=0)
-    plotted_array = np.stack((array[:-1,0], diff_array[:,1]/diff_array[:,0]), axis=1)
+    print(diff_array[115:125,:])
+    print(array[:-1,0])
+    plotted_array = np.stack((array[:-1,0], diff_array[:,0]/diff_array[:,1]), axis=1)
     params = {
         "title": ("Résistance dynamique $R_D$ en fonction de la différence\n" + 
                   "de potentiel aux bornes d'une diode standard"),
@@ -127,12 +139,12 @@ def make_figure_for_dvdi():
     plot_graph(plotted_array, params)
     save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
 
-# make_figure_for_dvdi()
+make_figure_for_dvdi()
 
 def make_figure_for_fitted_diode():
     array = np.load("lab_3/data/concatenated_part_4.npy")
     params = {
-        "title": ("Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard avec un" + 
+        "title": ("Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard avec un " + 
                   "ajustement de l'équation de Shockley"),
         "xlabel": "Différence de potentiel $∆V$ (V)", 
         "ylabel": "Courant $I$ (A)"
@@ -148,5 +160,5 @@ def make_figure_for_fitted_diode():
     plt.plot(x_space, shockley_equation(x_space, i_0, v_0), "b-", markersize=2)
     save_figure("lab_3/graphs/shockley.png", show=True)
 
-make_figure_for_fitted_diode()
+# make_figure_for_fitted_diode()
 
