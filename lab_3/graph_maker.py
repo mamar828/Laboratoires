@@ -89,7 +89,7 @@ def make_figure_for_part_d():
     plt.show()
     # save_figure("lab_3/graphs/part_3_d.png", show=True)
 
-make_figure_for_part_d()
+# make_figure_for_part_d()
 
 def make_figures_for_part_4():
     arrays = read_lvm("lab_3/data/part_4_ok_17.lvm")
@@ -98,38 +98,44 @@ def make_figures_for_part_4():
         "xlabel": r"Différence de potentiel $v_{ce}$ (V)", 
         "ylabel": r"Courant $i_{ce}$ (A)"
     }
-    plt.plot(arrays[0][:,0], arrays[0][:,1], "g-", markersize=2, label=r"Tension $v_{be}=0.0$ V")
-    plt.plot(arrays[1][:,0], arrays[1][:,1], "r-", markersize=2, label=r"Tension $v_{be}=0.2$ V")
-    plt.plot(arrays[2][:,0], arrays[2][:,1], "b-", markersize=2, label=r"Tension $v_{be}=0.4$ V")
-    plt.plot(arrays[3][:,0], arrays[3][:,1], "y-", markersize=2, label=r"Tension $v_{be}=0.6$ V")
-    plt.plot(arrays[4][:,0], arrays[4][:,1], "m-", markersize=2, label=r"Tension $v_{be}=0.8$ V")
-    plt.plot(arrays[5][:,0], arrays[5][:,1], "k-", markersize=2, label=r"Tension $v_{be}=1.0$ V")
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.plot(arrays[0][:,0], arrays[0][:,1], "g-", markersize=2, label=r"Tension $v_{be}=0.0$ V")
+    ax.plot(arrays[1][:,0], arrays[1][:,1], "r-", markersize=2, label=r"Tension $v_{be}=0.2$ V")
+    ax.plot(arrays[2][:,0], arrays[2][:,1], "b-", markersize=2, label=r"Tension $v_{be}=0.4$ V")
+    ax.plot(arrays[3][:,0], arrays[3][:,1], "y-", markersize=2, label=r"Tension $v_{be}=0.6$ V")
+    ax.plot(arrays[4][:,0], arrays[4][:,1], "m-", markersize=2, label=r"Tension $v_{be}=0.8$ V")
+    ax.plot(arrays[5][:,0], arrays[5][:,1], "k-", markersize=2, label=r"Tension $v_{be}=1.0$ V")
     try:
-        plt.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2, label=r"Tension $v_{be}=1.2$ V")
+        ax.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2, label=r"Tension $v_{be}=1.2$ V")
     except:
         pass
-    plt.title(params["title"])
-    plt.xlabel(params["xlabel"])
-    plt.ylabel(params["ylabel"])
-    plt.legend(fontsize=7)
+    ax.set_title(params["title"])
+    ax.set_xlabel(params["xlabel"])
+    ax.set_ylabel(params["ylabel"])
+    fig.legend(loc=(0.15,0.63), fontsize=7)
 
     # Get the values of i_{sat}
     i_sat_600mV  = np.mean(arrays[3][1:,1]), np.std(arrays[3][1:,1])
     i_sat_800mV  = np.mean(arrays[4][4:,1]), np.std(arrays[4][4:,1])
     i_sat_1000mV = np.mean(arrays[5][6:,1]), np.std(arrays[5][6:,1])
-    i_sat_1200mV = np.mean(arrays[6][8:,1]), np.std(arrays[6][8:,1])
-    plt.text(0.5, 0.4, "yoyoyo", ("Arial", 12))
-    plt.show()
+    i_sat_1200mV = np.mean(arrays[6][8:,1]), np.std(arrays[6][8:,1])*3
+    ax.text(2, 0.003, c="y", 
+            s=(r"$i_{sat}=$"+f"({round(i_sat_600mV[0]*10**6, 1)} ± {round(i_sat_600mV[1]*10**6, 1)}) μA"))
+    ax.text(2, 0.044, c="m", 
+            s=(r"$i_{sat}=$"+f"({int(round(i_sat_800mV[0]*10**3, 0))} ± {int(round(i_sat_800mV[1]*10**3, 0))}) mA"))
+    ax.text(2, 0.12, c="k", 
+            s=(r"$i_{sat}=$"+f"({int(round(i_sat_1000mV[0]*10**3, 0))} ± {int(round(i_sat_1000mV[1]*10**3, 0))}) mA"))
+    ax.text(2, 0.195, c="c", 
+            s=(r"$i_{sat}=$"+f"({round(i_sat_1200mV[0], 2)} ± {round(i_sat_1200mV[1], 2)}) A"))
+    save_figure("lab_3/graphs/part_4.png", show=True)
 
-# make_figures_for_part_4()
+make_figures_for_part_4()
 
 def make_figure_for_dvdi():
     array = np.load("lab_3/data/concatenated_part_4.npy")
-    print(array[115:125,:])
     diff_array = np.diff(array, n=1, axis=0)
-    print(diff_array[115:125,:])
-    print(array[:-1,0])
-    plotted_array = np.stack((array[:-1,0], diff_array[:,0]/diff_array[:,1]), axis=1)
+    plotted_array = np.stack((array[:-1,0], np.abs(diff_array[:,0]/diff_array[:,1])), axis=1)
     params = {
         "title": ("Résistance dynamique $R_D$ en fonction de la différence\n" + 
                   "de potentiel aux bornes d'une diode standard"),
@@ -137,7 +143,7 @@ def make_figure_for_dvdi():
         "ylabel": "Résistance dynamique $R_D$ (Ω)"
     }
     plot_graph(plotted_array, params)
-    save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
+    save_figure("lab_3/graphs/dynamic_resistance_abs.png", show=True)
 
 # make_figure_for_dvdi()
 
@@ -160,5 +166,10 @@ def make_figure_for_fitted_diode():
     plt.plot(x_space, shockley_equation(x_space, i_0, v_0), "b-", markersize=2)
     save_figure("lab_3/graphs/shockley.png", show=True)
 
+    residue = shockley_equation(array[:,0], i_0, v_0) - array[:,1]
+    plot_graph(np.stack((array[:,0], residue), axis=1))
+    plt.title(f"residue stddev: {np.std(residue)}")
+    save_figure("lab_3/graphs/shockley_residue.png", show=True)
+    
 # make_figure_for_fitted_diode()
 
