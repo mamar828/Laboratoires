@@ -73,7 +73,6 @@ def make_figures_for_parts_abce():
     for data, save_path, params in plot_files:
         plot_graph(read_lvm(data), params=params)
         save_figure(save_path, show=True)
-
 # make_figures_for_parts_abce()
 
 def make_figure_for_part_d():
@@ -87,7 +86,8 @@ def make_figure_for_part_d():
         "ylabel": "Courant $I$ (A)"
     }
     plot_graph(global_array, params)
-    save_figure("lab_3/graphs/part_3_d.png", show=True)
+    plt.show()
+    # save_figure("lab_3/graphs/part_3_d.png", show=True)
 
 make_figure_for_part_d()
 
@@ -139,7 +139,7 @@ def make_figure_for_dvdi():
     plot_graph(plotted_array, params)
     save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
 
-make_figure_for_dvdi()
+# make_figure_for_dvdi()
 
 def make_figure_for_fitted_diode():
     array = np.load("lab_3/data/concatenated_part_4.npy")
