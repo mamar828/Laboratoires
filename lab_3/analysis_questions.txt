@@ -21,7 +21,7 @@ Q2 La courbe i–v que vous avez mesurée pour un de ces deux composants ne cor
 
 Le solénoïde
 
-Q3 Pour le transistor, faites un graphique superposant l’ensemble des courbes i–v dont vous avez fait l’acquisition pendant le laboratoire. Indiquez explicitement au-dessus de chaque courbe la valeur de courant de saturation isat, i.e. le plateau maximal de courant (avec incertitude par rapport à l’horizontale) qui entre dans le collecteur ice.
+Q3 Pour le transistor, faites un graphique superposant l’ensemble des courbes i–v dont vous avez fait l’acquisition pendant le laboratoire. Indiquez explicitement au-dessus de chaque courbe la valeur de courant de saturation isat, i.e. le plateau maximal de courant (avec incertitude par rapport à l’horizontale) qui entre dans le collecteur i_{ce}.
 
 Q4 Comparez les courbes i–v des diodes "standard" et Zener. Pourquoi avons-nous choisi une diode Zener pour appliquer la fonction de réguler la tension ?
 ▶ Le comportement de la tension d’une diode "standard" n’est pas suffisam- ment juste pour la fonction requise, soit de garder la tension constante pour différentes intensités du courant.
@@ -40,7 +40,7 @@ Q5 Section de rapport - Analyse des résultats & discussion : Écrivez en moin
 — proposition d’un modèle un peu mieux adapté aux mesures, soit l’équation de Shockley pour la diode: i(v)=i_0(e^(v/v_0)−1) où i_0 et v_0 sont des constantes ajustables,
 — graphique de la courbe i–v mesurée (avec des points) et de l’équation de Shockley ajustée à ces données (avec une ligne) ; cet ajustement (régression, fit) de courbe se fait avec des outils informatiques, par exemple Curve Fitting Toolbox de MATLAB ou scipy.optimize.curve_fit de Python,
 — analyse de la correspondance entre la fonction ajustée et les résultats de mesure sur ce graphique,
-— interprétation des résultats au mieux de vos connaissances sur la phy- sique des diodes.
+— interprétation des résultats au mieux de vos connaissances sur la physique des diodes.
 
 Pour ce dernier item, d’autres sources que les notes de cours, allant de sites Internet professionnels à la bibliothèque qui existe encore(!), peuvent être utilisées pour aller plus en profondeur dans votre discussion. Il n’est pas nécessaire de maîtriser toute la physique de la matière condensée à ce point-ci bien sûr, veuillez respecter la limite de mots pour cette question.
 
