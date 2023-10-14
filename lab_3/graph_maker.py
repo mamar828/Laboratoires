@@ -92,7 +92,7 @@ def make_figure_for_part_d():
 # make_figure_for_part_d()
 
 def make_figures_for_part_4():
-    arrays = read_lvm("lab_3/data/part_4.lvm")
+    arrays = read_lvm("lab_3/data/part_4_ok_23.lvm")
     params = {
         "title": r"Courant $i_{ce}$ en fonction de la tension $v_{ce}$ pour différentes tensions $v_{be}$",
         "xlabel": r"Différence de potentiel $v_{ce}$ (V)", 
@@ -112,7 +112,7 @@ def make_figures_for_part_4():
     plt.legend(fontsize=7)
     plt.show()
     
-make_figures_for_part_4()
+# make_figures_for_part_4()
 
 def make_figure_for_dvdi():
     array = np.load("lab_3/data/concatenated_part_4.npy")
@@ -131,16 +131,22 @@ def make_figure_for_dvdi():
 
 def make_figure_for_fitted_diode():
     array = np.load("lab_3/data/concatenated_part_4.npy")
-    
+    params = {
+        "title": ("Courant en fonction de la différence de potentiel aux bornes \nd'une diode standard avec un" + 
+                  "ajustement de l'équation de Shockley"),
+        "xlabel": "Différence de potentiel $∆V$ (V)", 
+        "ylabel": "Courant $I$ (A)"
+    }
+
     def shockley_equation(v, i_0, v_0):
         return i_0 * (np.e**(v/v_0) - 1)
 
     i_0, v_0 = scipy.optimize.curve_fit(shockley_equation, array[:,0], array[:,1])[0]
-    plot_graph(array)
+    plot_graph(array, params)
 
     x_space = np.linspace(-6,1, 350)
     plt.plot(x_space, shockley_equation(x_space, i_0, v_0), "b-", markersize=2)
-    plt.show()
+    save_figure("lab_3/graphs/shockley.png", show=True)
 
-# make_figure_for_fitted_diode()
+make_figure_for_fitted_diode()
 
