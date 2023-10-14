@@ -92,29 +92,26 @@ def make_figure_for_part_d():
 # make_figure_for_part_d()
 
 def make_figures_for_part_4():
-    voltage_be = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2]
     arrays = read_lvm("lab_3/data/part_4.lvm")
     params = {
         "title": r"Courant $i_{ce}$ en fonction de la tension $v_{ce}$ pour différentes tensions $v_{be}$",
-        "xlabel": "Différence de potentiel $∆V$ (V)", 
-        "ylabel": "Courant $I$ (A)"
+        "xlabel": r"Différence de potentiel $v_{ce}$ (V)", 
+        "ylabel": r"Courant $i_{ce}$ (A)"
     }
-    plot_graph(arrays[0], params=params)
-    plt.plot(arrays[1][:,0], arrays[1][:,1], "r-", markersize=2)
-    plt.plot(arrays[2][:,0], arrays[2][:,1], "b-", markersize=2)
-    plt.plot(arrays[3][:,0], arrays[3][:,1], "y-", markersize=2)
-    plt.plot(arrays[4][:,0], arrays[4][:,1], "m-", markersize=2)
-    plt.plot(arrays[5][:,0], arrays[5][:,1], "b-", markersize=2)
-    plt.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2)
+    plt.plot(arrays[0][:,0], arrays[0][:,1], "g-", markersize=2, label=r"Tension $v_{be}=0.0$ V")
+    plt.plot(arrays[1][:,0], arrays[1][:,1], "r-", markersize=2, label=r"Tension $v_{be}=0.2$ V")
+    plt.plot(arrays[2][:,0], arrays[2][:,1], "b-", markersize=2, label=r"Tension $v_{be}=0.4$ V")
+    plt.plot(arrays[3][:,0], arrays[3][:,1], "y-", markersize=2, label=r"Tension $v_{be}=0.6$ V")
+    plt.plot(arrays[4][:,0], arrays[4][:,1], "m-", markersize=2, label=r"Tension $v_{be}=0.8$ V")
+    plt.plot(arrays[5][:,0], arrays[5][:,1], "k-", markersize=2, label=r"Tension $v_{be}=1.0$ V")
+    plt.plot(arrays[6][:,0], arrays[6][:,1], "c-", markersize=2, label=r"Tension $v_{be}=1.2$ V")
+
+    plt.title(params["title"])
+    plt.xlabel(params["xlabel"])
+    plt.ylabel(params["ylabel"])
+    plt.legend(fontsize=7)
     plt.show()
     
-    # for voltage, array in zip(voltage_be, arrays):
-    #     # params["title"] = (r"Courant $i_{ce}$ en fonction de la tension $v_{ce}$ pour une tension $v_{be}$ de " + 
-    #     #                    f"{voltage}V")
-    #     plot_graph(array, params=params)
-    #     # save_figure(f"lab_3/graphs/part_4_{voltage}V.png", show=True)
-    plt.show()
-
 make_figures_for_part_4()
 
 def make_figure_for_dvdi():
