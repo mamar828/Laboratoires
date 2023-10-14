@@ -130,7 +130,7 @@ def make_figures_for_part_4():
             s=(r"$i_{sat}=$"+f"({round(i_sat_1200mV[0], 2)} ± {round(i_sat_1200mV[1], 2)}) A"))
     save_figure("lab_3/graphs/part_4.png", show=True)
 
-make_figures_for_part_4()
+# make_figures_for_part_4()
 
 def make_figure_for_dvdi():
     array = np.load("lab_3/data/concatenated_part_4.npy")
