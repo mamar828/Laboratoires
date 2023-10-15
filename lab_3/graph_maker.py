@@ -175,10 +175,10 @@ def make_figure_for_dvdi(calc_uncertainty: bool=False):
         plt.ylabel(params["ylabel"])
     else:
         plot_graph(plotted_array, params)
-        
-    save_figure("lab_3/graphs/dynamic_resistance_new.png", show=True)
 
-make_figure_for_dvdi()
+    save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
+
+# make_figure_for_dvdi()
 
 def make_figure_for_fitted_diode():
     array = np.load("lab_3/data/concatenated_part_4.npy")
@@ -202,7 +202,9 @@ def make_figure_for_fitted_diode():
     save_figure("lab_3/graphs/shockley.png", show=True)
 
     residue = shockley_equation(array[:,0], i_0, v_0) - array[:,1]
-    plot_graph(np.stack((array[:,0], residue), axis=1))
+    params["title"] = ("Résidu de l'équation de Shockley appliquée aux mesures de courant en\nfonction de la " + 
+                       "différence de potentiel aux bornes d'une diode standard")
+    plot_graph(np.stack((array[:,0], residue), axis=1), params)
     print(f"residue stddev: {np.std(residue)}")
     print(f"residue mean  : {np.mean(residue)}")
     save_figure("lab_3/graphs/shockley_residue.png", show=True)
