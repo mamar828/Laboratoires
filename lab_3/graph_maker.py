@@ -100,16 +100,28 @@ def make_figures_for_part_4():
     }
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
-    ax.plot(arrays[0][:,0], arrays[0][:,1], "go", markersize=2, label=r"Tension $v_{be}=0.0$ V")
-    ax.plot(arrays[1][:,0], arrays[1][:,1], "ro", markersize=2, label=r"Tension $v_{be}=0.2$ V")
-    ax.plot(arrays[2][:,0], arrays[2][:,1], "bo", markersize=2, label=r"Tension $v_{be}=0.4$ V")
-    ax.plot(arrays[3][:,0], arrays[3][:,1], "yo", markersize=2, label=r"Tension $v_{be}=0.6$ V")
-    ax.plot(arrays[4][:,0], arrays[4][:,1], "mo", markersize=2, label=r"Tension $v_{be}=0.8$ V")
-    ax.plot(arrays[5][:,0], arrays[5][:,1], "ko", markersize=2, label=r"Tension $v_{be}=1.0$ V")
-    try:
-        ax.plot(arrays[6][:,0], arrays[6][:,1], "co", markersize=2, label=r"Tension $v_{be}=1.2$ V")
-    except:
-        pass
+
+    ax.errorbar(arrays[0][:,0], arrays[0][:,1], fmt="go",
+                markersize=2, label=r"Tension $v_{be}=0.0$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.005/100*arrays[0][:,1]+0.010/100*0.01)
+    ax.errorbar(arrays[1][:,0], arrays[1][:,1], fmt="ro",
+                markersize=2, label=r"Tension $v_{be}=0.2$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.005/100*arrays[1][:,1]+0.010/100*0.01)
+    ax.errorbar(arrays[2][:,0], arrays[2][:,1], fmt="bo",
+                markersize=2, label=r"Tension $v_{be}=0.4$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.005/100*arrays[2][:,1]+0.010/100*0.01)
+    ax.errorbar(arrays[3][:,0], arrays[3][:,1], fmt="yo",
+                markersize=2, label=r"Tension $v_{be}=0.6$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.005/100*arrays[3][:,1]+0.010/100*0.01)
+    ax.errorbar(arrays[4][:,0], arrays[4][:,1], fmt="mo",
+                markersize=2, label=r"Tension $v_{be}=0.8$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.01/100*arrays[4][:,1]+0.004/100*0.1)
+    ax.errorbar(arrays[5][:,0], arrays[5][:,1], fmt="ko",
+                markersize=2, label=r"Tension $v_{be}=1.0$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.05/100*arrays[5][:,1]+0.006/100*1)
+    ax.errorbar(arrays[6][:,0], arrays[6][:,1], fmt="co",
+                markersize=2, label=r"Tension $v_{be}=1.2$ V",
+                xerr=0.0015/100*arrays[0][:,0]+0.0004/100*10, yerr=0.05/100*arrays[6][:,1]+0.006/100*1)
     ax.set_title(params["title"])
     ax.set_xlabel(params["xlabel"])
     ax.set_ylabel(params["ylabel"])
@@ -133,9 +145,9 @@ def make_figures_for_part_4():
     print(f"400mV std: {np.std(arrays[2][1:,1])}")
     save_figure("lab_3/graphs/part_4.png", show=True)
 
-make_figures_for_part_4()
+# make_figures_for_part_4()
 
-def make_figure_for_dvdi():
+def make_figure_for_dvdi(calc_uncertainty: bool=False):
     array = np.load("lab_3/data/concatenated_part_4.npy")
     diff_array = np.diff(array, n=1, axis=0)
     plotted_array = np.stack((array[:-1,0], diff_array[:,0]/diff_array[:,1]), axis=1)
@@ -145,10 +157,28 @@ def make_figure_for_dvdi():
         "xlabel": "Différence de potentiel $∆V$ [V]", 
         "ylabel": "Résistance dynamique $R_D$ [Ω]"
     }
-    plot_graph(plotted_array, params)
-    save_figure("lab_3/graphs/dynamic_resistance.png", show=True)
 
-# make_figure_for_dvdi()
+    if calc_uncertainty:
+        v_uncertainty = 0.0015/100*np.abs(plotted_array[:,0]) + 0.0004/100*10
+        i_uncertainty = np.concatenate((
+            0.005/100*np.abs(plotted_array[:-5,1]) + 0.010/100*0.01, 0.01/100*np.abs(plotted_array[-5:,1]) + 0.004/100*0.1
+        ))
+        r_uncertainty = (
+            ((v_uncertainty[1:] + v_uncertainty[:-1]) / np.abs(diff_array[:-1,0]) + 
+            (i_uncertainty[1:] + i_uncertainty[:-1]) / np.abs(diff_array[:-1,1])) * np.abs(plotted_array[:-1,1])
+        )
+
+        plt.errorbar(plotted_array[:-1,0], plotted_array[:-1,1], xerr=v_uncertainty[:-1], yerr=r_uncertainty,
+                    markersize=2, fmt="go")
+        plt.title(params["title"])
+        plt.xlabel(params["xlabel"])
+        plt.ylabel(params["ylabel"])
+    else:
+        plot_graph(plotted_array, params)
+        
+    save_figure("lab_3/graphs/dynamic_resistance_new.png", show=True)
+
+make_figure_for_dvdi()
 
 def make_figure_for_fitted_diode():
     array = np.load("lab_3/data/concatenated_part_4.npy")
