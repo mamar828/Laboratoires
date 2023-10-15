@@ -53,7 +53,7 @@ L'analyse des résultats indique que la diode est probablement composée de sili
 [1] https://pdf1.alldatasheet.net/datasheet-pdf/view-marking/1275309/ONSEMI/1N914B.html
 [2] https://en.wikipedia.org/wiki/Shockley_diode_equation
 [3] https://fr.wikipedia.org/wiki/Diode
-Figure 1 Courant en fonction de la différence de potentiel aux bornes d'une diode standard. Le courant augmente rapidement proche de la tension seuil en suivant une forme similaire à une exponentielle.
+Figure 1 Résistance dynamique en fonction de la différence de potentiel aux bornes d'une diode standard. Le courant augmente rapidement proche de la tension seuil en suivant une forme similaire à une exponentielle.
 
 Figure 2 Courant en fonction de la différence de potentiel aux bornes d'une diode standard et sa représentation en suivant le modèle de Shockley. L'erreur à proximité de la tension seuil indique que la diode est plus proche d'une diode idéale que ce que le modèle suppose.
 
