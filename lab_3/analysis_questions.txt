@@ -53,11 +53,11 @@ L'analyse des résultats indique que la diode est probablement composée de sili
 [1] https://pdf1.alldatasheet.net/datasheet-pdf/view-marking/1275309/ONSEMI/1N914B.html
 [2] https://en.wikipedia.org/wiki/Shockley_diode_equation
 [3] https://fr.wikipedia.org/wiki/Diode
-Figure 1 Résistance dynamique en fonction de la différence de potentiel aux bornes d'une diode standard. Le courant augmente rapidement proche de la tension seuil en suivant une forme similaire à une exponentielle.
+Figure 1 Résistance dynamique en fonction de la différence de potentiel aux bornes d'une diode standard. Les grandes variations sont causées par de très petites fluctuations dans les valeurs de courant qui sont proches de 0. Les barres d'erreur sont omises puisque l'incertitude sur les valeurs en polarité inverse sont plus grande que ces dernières par un ordre de grandeur de 10^{12} et que les incertitudes sur la valeurs en polarité directe sont trop petites pour être remarquées.
 
-Figure 2 Courant en fonction de la différence de potentiel aux bornes d'une diode standard et sa représentation en suivant le modèle de Shockley. L'erreur à proximité de la tension seuil indique que la diode est plus proche d'une diode idéale que ce que le modèle suppose.
+Figure 2 Courant en fonction de la différence de potentiel aux bornes d'une diode standard et sa représentation en suivant le modèle de Shockley. L'erreur à proximité de la tension seuil indique que la diode est plus proche d'une diode idéale que ce que le modèle suppose. Les bar incertitudes, bien que calculées, sont trop petites pour être vues sur le graphique.
 
-Figure 3 Résidu entre les mesures de la diode standard et le modèle de Shockley. L'augmentation du résidu à proximité de la tension seuil, soit la région où le modèle de Shockley varie considérablement relatif à une diode idéale, indique la différence entre le modèle et la diode réel. Le résidu est faible et systématiquement négatif en polarité inverse à cause de l'exponentielle utilisée dans le modèle.
+Figure 3 Résidu entre les mesures de la diode standard et le modèle de Shockley. L'augmentation du résidu à proximité de la tension seuil, soit la région où le modèle de Shockley varie considérablement relatif à une diode idéale, indique la différence entre le modèle et la diode réel. Le résidu est faible et systématiquement négatif en polarité inverse à cause de l'exponentielle utilisée dans le modèle. Les bar incertitudes, bien que calculées, sont trop petites pour être vues sur le graphique.
 
 Travail restant : incertitude sur valeurs de tension et de courant
 
