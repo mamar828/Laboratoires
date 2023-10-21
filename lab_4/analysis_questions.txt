@@ -1,0 +1,43 @@
+Q1 Calculez la valeur de tension efficace d’un signal carré et celle d’un signal triangulaire avec la fréquence et l’amplitude crête à crête employées par le générateur de fonctions dans la première partie des expériences.
+1. À l’aide des incertitudes et du vocabulaire international de métrologie (VIM), comparez très brièvement vos résultats de mesure en tension efficace à ces calculs.
+
+2. Est-ce que le facteur de crête du signal triangulaire varie avec son amplitude (valeur crête) ?
+▶ Oui ou ▶ Non
+
+Q2 Dans la troisième partie, vous avez mesuré les paramètres de tension d’un signal sinusoïdal aux bornes de quatre composants en série.
+Q2.1 Si vous additionnez simplement les quatre valeurs crête à crête mesurées, obtenez-vous la valeur crête à crête de la tension aux bornes de la source ?
+▶ Non, la loi des mailles de Kirchhoff n’est donc pas respectée avec ces valeurs.
+▶ Oui, la loi des mailles de Kirchhoff est donc respectée avec ces valeurs.
+
+Q2.2 À l’aide de la forme polaire des nombres complexes, présentez la démarche d’addition vectorielle des quatre signaux alternatifs en tension avec leurs fréquence ω, phase φ et module v0 qui est la moitié de l’amplitude crête à crête. Notez que le phaseur v = v0 e^{jφ} suffit, car le facteur e^{jωt} reste le même dans tout le circuit linéaire.
+
+Q2.3 Est-ce que le résultat de l’addition précédente correspond à la tension mesurée aux bornes de la source ?
+▶ Non, la loi des mailles de Kirchhoff n’est toujours pas respectée dans ce cas.
+▶ Oui, la loi des mailles de Kirchhoff est alors respectée avec ce meilleur modèle mathématique des signaux.
+
+Q2.4 Confirmez finalement que vous obtenez les mêmes observations sur le déphasage et l’amplitude entre les divers composants du circuit en le simulant sur le site de Paul Falstad. Le déplacement des points jaunes sur les fils (ajustez la barre Current speed sur la droite au besoin) illustre le flux du courant (ce n’est PAS la trajectoire des électrons dans les fils !) alors que l’alternance rouge/vert représente les changements en tension négative/positive par rapport à la mise à la terre (gris pour une référence de tension nulle).
+Dans un premier oscilloscope (Clic droit → View in Scope), affichez simultanément les tensions de la source, des deux résistances individuelles et de la résistance conjointe. Dans un second oscilloscope, faites de même avec la source et les deux condensateurs.
+Pour l’évaluation, remettez un lien vers votre simulation complétée du circuit (File → Export As Link...) ainsi qu’une capture d’écran qui inclut les signaux en tension sur les oscilloscopes.
+Conseils pour bien visualiser les signaux : En plus de la vitesse de simulation sur la droite, il est possible d’ajuster les échelles verticale (tension, courant) et horizontale (temps) des oscilloscopes avec Clic droit → Properties.... De plus dans Plots, (dé)cocher Show current permet d’afficher seulement le signal de tension.
+
+Q3 Dans la quatrième partie, vous avez mesuré à l’oscilloscope des tensions dans les domaines temporel et fréquentiel (Fourier) tout en captant des signaux provenant de l’extérieur d’un fil.
+Q3.1 Lorsque vous avez affiché la FFT du signal sinusoïdal provenant du générateur de fonctions, vous avez remarqué que le pic correspondait à la fréquence fondamentale dudit signal. À quoi correspondent les pics subséquents que vous avez observés ? Sélectionnez les énoncés ci-dessous qui sont applicables.
+▶ Des harmoniques de la fréquence fondamentale.
+▶ Des multiples entiers de la fréquence fondamentale.
+▶ Les fréquences du signal développé en série de Taylor.
+▶ La fréquence dans les arguments des termes sinus & cosinus, ou encore des exponentielles complexes, dans le développement en série de Fourier du signal (prolongé périodiquement).
+
+Q3.2 ▶ Vrai ou ▶ Faux : En l’absence de bruit qui cause des imperfections du signal, un seul pic serait affiché dans la FFT.
+
+Q3.3 À l’étape e), vous avez observé la présence d’une onde électromagnétique qui introduisait un signal parasite. Quelle est la source de ce signal ?
+▶ Le réseau de distribution d’électricité Hydro-Québec avec un courant alternatif à une fréquence de 120 Hz.
+▶ Le réseau de distribution d’électricité Hydro-Québec avec un courant alternatif à une fréquence de 120 V.
+▶ Le réseau de distribution d’électricité Hydro-Québec avec un courant alternatif à une fréquence de 60 V.
+▶ Le réseau de distribution d’électricité Hydro-Québec avec un courant alternatif à une fréquence de 60 Hz.
+
+Q3.4 À l’étape g) de la quatrième partie, vous avez remarqué que le signal passe d’un fil à un autre sans qu’ils soient pour autant connectés, puisqu’ils étaient séparés par une gaine isolante. Le mécanisme physique de ce transfert d’énergie est le même que celui dans un ou des composant(s) électrique(s). Lequel ou lesquels parmi ceux ci-dessous ?
+▶ Résistance
+▶ Bobine d’inductance ▶ Condensateur
+▶ Diode Zener
+
+Section de rapport - Abrégé : Écrivez en moins de 200 mots l’abrégé (abstract) d’un rapport scientifique qui porterait sur cette séance de laboratoire.
