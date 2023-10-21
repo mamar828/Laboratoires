@@ -1,15 +1,28 @@
 Q1 Calculez la valeur de tension efficace d’un signal carré et celle d’un signal triangulaire avec la fréquence et l’amplitude crête à crête employées par le générateur de fonctions dans la première partie des expériences.
+Tension efficace d'un signal carré: 1.25 V
+Tension efficace d'un signal triangulaire: 0.722 V
+
 1. À l’aide des incertitudes et du vocabulaire international de métrologie (VIM), comparez très brièvement vos résultats de mesure en tension efficace à ces calculs.
 
+La tension efficace du signal carré mesurée par l'oscilloscope, soit (1252.3 ± 0.4) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 1250 mV.
+La tension efficace du signal triangulaire mesurée par l'oscilloscope, soit (720.3 ± 0.3) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 722 mV.
+
 2. Est-ce que le facteur de crête du signal triangulaire varie avec son amplitude (valeur crête) ?
-▶ Oui ou ▶ Non
+▶ Oui
+▶ Non
+
+Non, car le facteur de crête est défini comme le rapport entre l'amplitude du pic et la valeur efficace du signal.
 
 Q2 Dans la troisième partie, vous avez mesuré les paramètres de tension d’un signal sinusoïdal aux bornes de quatre composants en série.
 Q2.1 Si vous additionnez simplement les quatre valeurs crête à crête mesurées, obtenez-vous la valeur crête à crête de la tension aux bornes de la source ?
 ▶ Non, la loi des mailles de Kirchhoff n’est donc pas respectée avec ces valeurs.
 ▶ Oui, la loi des mailles de Kirchhoff est donc respectée avec ces valeurs.
 
+Non, 0.72*2+0.88+1.25=3.57
+
 Q2.2 À l’aide de la forme polaire des nombres complexes, présentez la démarche d’addition vectorielle des quatre signaux alternatifs en tension avec leurs fréquence ω, phase φ et module v0 qui est la moitié de l’amplitude crête à crête. Notez que le phaseur v = v0 e^{jφ} suffit, car le facteur e^{jωt} reste le même dans tout le circuit linéaire.
+
+Q2,2.pages
 
 Q2.3 Est-ce que le résultat de l’addition précédente correspond à la tension mesurée aux bornes de la source ?
 ▶ Non, la loi des mailles de Kirchhoff n’est toujours pas respectée dans ce cas.
