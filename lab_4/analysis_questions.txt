@@ -4,8 +4,8 @@ Tension efficace d'un signal triangulaire: 0.722 V
 
 1. À l’aide des incertitudes et du vocabulaire international de métrologie (VIM), comparez très brièvement vos résultats de mesure en tension efficace à ces calculs.
 
-La tension efficace du signal carré mesurée par l'oscilloscope, soit (1252.3 ± 0.4) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 1250 mV.
-La tension efficace du signal triangulaire mesurée par l'oscilloscope, soit (720.3 ± 0.3) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 722 mV.
+La tension efficace du signal carré mesurée par l'oscilloscope, soit (1252.3 ± 0.4) mV, n'est pas égale à la tension efficace de référence calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 1250 mV.
+La tension efficace du signal triangulaire mesurée par l'oscilloscope, soit (720.3 ± 0.3) mV, n'est pas égale à la tension efficace de référence calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 722 mV.
 
 2. Est-ce que le facteur de crête du signal triangulaire varie avec son amplitude (valeur crête) ?
 ▶ Oui
@@ -44,7 +44,7 @@ Q3.1 Lorsque vous avez affiché la FFT du signal sinusoïdal provenant du gé
 ▶ Les fréquences du signal développé en série de Taylor.
 ▶ La fréquence dans les arguments des termes sinus & cosinus, ou encore des exponentielles complexes, dans le développement en série de Fourier du signal (prolongé périodiquement).
 
-a, b, 
+a, b, d
 
 Q3.2 ▶ Vrai ou ▶ Faux : En l’absence de bruit qui cause des imperfections du signal, un seul pic serait affiché dans la FFT.
 
@@ -64,6 +64,6 @@ Q3.4 À l’étape g) de la quatrième partie, vous avez remarqué que le si
 ▶ Condensateur
 ▶ Diode Zener
 
-Bobine d'inductance
+Bobine d'inductance et condensateur
 
 Section de rapport - Abrégé : Écrivez en moins de 200 mots l’abrégé (abstract) d’un rapport scientifique qui porterait sur cette séance de laboratoire.
