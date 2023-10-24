@@ -4,8 +4,8 @@ Tension efficace d'un signal triangulaire: 0.722 V
 
 1. À l’aide des incertitudes et du vocabulaire international de métrologie (VIM), comparez très brièvement vos résultats de mesure en tension efficace à ces calculs.
 
-La tension efficace du signal carré mesurée par l'oscilloscope, soit (1252.3 ± 0.4) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 1250 mV.
-La tension efficace du signal triangulaire mesurée par l'oscilloscope, soit (720.3 ± 0.3) mV, n'est pas égale à la tension efficace calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 722 mV.
+La tension efficace du signal carré mesurée par l'oscilloscope, soit (1252.3 ± 0.4) mV, n'est pas égale à la tension efficace de référence calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 1250.0 mV.
+La tension efficace du signal triangulaire mesurée par l'oscilloscope, soit (720.3 ± 0.3) mV, n'est pas égale à la tension efficace de référence calculée selon la tension envoyée par le générateur de fonction, qui donnait une tension efficace de 722 mV.
 
 2. Est-ce que le facteur de crête du signal triangulaire varie avec son amplitude (valeur crête) ?
 ▶ Oui
@@ -44,7 +44,7 @@ Q3.1 Lorsque vous avez affiché la FFT du signal sinusoïdal provenant du gé
 ▶ Les fréquences du signal développé en série de Taylor.
 ▶ La fréquence dans les arguments des termes sinus & cosinus, ou encore des exponentielles complexes, dans le développement en série de Fourier du signal (prolongé périodiquement).
 
-a, b, 
+a, b, d
 
 Q3.2 ▶ Vrai ou ▶ Faux : En l’absence de bruit qui cause des imperfections du signal, un seul pic serait affiché dans la FFT.
 
@@ -64,6 +64,12 @@ Q3.4 À l’étape g) de la quatrième partie, vous avez remarqué que le si
 ▶ Condensateur
 ▶ Diode Zener
 
-Bobine d'inductance
+Bobine d'inductance et condensateur
 
 Section de rapport - Abrégé : Écrivez en moins de 200 mots l’abrégé (abstract) d’un rapport scientifique qui porterait sur cette séance de laboratoire.
+
+Les lois de Kirchhoff permettent l’analyse simple de circuits électriques en courant continu. Toutefois, la validité des lois et le fonctionnement des composantes en courant alternatif est moins bien caractérisé. L’objectif est ainsi de décrire l'effet d'un courant alternatif sur différentes composantes électriques et de valider des lois de Kirchhoff. Pour y arriver, un générateur de fonction sonde le système en utilisant différents signaux et l’oscilloscope mesure la réponse du système. L'analyse de la réponse d'un circuit composé de deux résistances et de deux condensateurs confirme l'applicabilité des lois de Kirchhoff sous la condition que les tensions et les courants soient représentés par des exponentielles complexes. De plus, les résistances causent un déphasage de (-38 ± 1) [°]  et les condensateurs causent un déphasage de (-52 ± 1) [°], indiquant que différentes composantes affectent différemment le signal électrique mesuré. Ces différences sont causées par les multiples variations dans l’interaction entre la composante et les champs électromagnétiques en jeu. Une analyse de situations à multiples circuits révèle que les variations de courants forment des champs électromagnétiques causant en retour un courant alternatif de même fréquence dans les circuits à proximité. L'utilisation d'un circuit ouvert comme antenne permet d'analyser les champs électromagnétiques environnants, notamment de mesurer les champs causés par le courant alternatif d'Hydro-Québec à 60Hz.
+
+
+
+On ajoute tu ça : L'analyse des signaux utilisés révèle également que les calculs théoriques de potentiel efficace correspondent aux mesures effectuées par un multimètre.
