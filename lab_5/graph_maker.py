@@ -50,8 +50,8 @@ def make_power_figure():
     # Only resistance curve
     resistance_data = []
     # resistance_data.append(read_lvm("lab_5/data/lab_5_data.lvm"))
-    for i in [4,6,8,10,12,14,16,18,22,24,30,32,36]:
-        resistance_data.append(read_lvm(f"lab_5/data/lab_5_data_{i}.lvm"))
+    for i in range(1,24):
+        resistance_data.append(read_lvm(f"lab_5/data_new/resistance/part_1_{i}.lvm"))
     
     r_global_array = np.stack((resistance_data), axis=0)
     r_dissipated_power = r_global_array[:,:,1]**2 / r_global_array[:,:,0]
@@ -59,16 +59,29 @@ def make_power_figure():
 
     # Adding resistance + capacitor curve
     capacitor_data = []
-    for i in [3,5,7,9,11,13,15,17,23,25,27,29,31,33]:
-        capacitor_data.append(read_lvm(f"lab_5/data/lab_5_data_{i}.lvm"))
+    for i in range(1,23):
+        capacitor_data.append(read_lvm(f"lab_5/data_new/capacitor/part_2_{i}.lvm"))
 
     c_global_array = np.stack((capacitor_data), axis=0)
     c_dissipated_power = c_global_array[:,:,1]**2 / c_global_array[:,:,0]
     c_plotted_array = np.stack((np.mean(c_global_array[:,:,0], axis=1), np.mean(c_dissipated_power, axis=1)), axis=1)
+
+
+    # Adding resistance + capacitor curve
+    capacitor_data_2 = []
+    for i in range(1,9):
+        capacitor_data_2.append(read_lvm(f"lab_5/data_new/capacitor_low/part_5_{i}.lvm"))
+
+    c_global_array_2 = np.stack((capacitor_data_2), axis=0)
+    c_dissipated_power_2 = c_global_array_2[:,:,1]**2 / c_global_array_2[:,:,0]
+    c_plotted_array_2 = np.stack((np.mean(c_global_array_2[:,:,0], axis=1), np.mean(c_dissipated_power_2, axis=1)), axis=1)
     
     # Plotting and setting the parameters
     for array, markertype, label in [[r_plotted_array, "go", "Circuit de la Figure 1"],
-                                     [c_plotted_array, "yo", "Circuit de la Figure 2"]]:
+                                     [c_plotted_array, "yo", "Circuit de la Figure 2"],
+                                     [c_plotted_array_2, "mo", "Circuit de la Figure 3"]]:
+        if markertype != "mo":
+            continue
         plt.plot(array[:,0], array[:,1], markertype, label=label, markersize=2)
     
     plt.title("Puissance moyenne dissipée [W] par la charge en fonction de la résistance [$\Omega$]")
@@ -77,5 +90,7 @@ def make_power_figure():
     # plt.xscale("log")
     plt.legend(loc="upper right")
     plt.show()
+
+
 
 make_power_figure()
