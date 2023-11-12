@@ -8,7 +8,7 @@ Q1 Pour chaque signal ci-après, dites si la tension efficace prise en mode CC e
 
 Q2 Dans la première partie du laboratoire, après avoir modifié le pont de diodes afin d’avoir un signal moyenné, vous avez sûrement remarqué, à l’aide de l’oscilloscope, que ce dernier n’était pas encore tout à fait constant : les oscillations étaient encore notables. Parmi les options suivantes, laquelle ou lesquelles permet(tent) de réduire ces oscillations ?
 
-Note, l'équation est C \gg \frac{1}{Rf} pour que le condensateur effectue un travail pertinent (on cherche a ce que le temps de démarche du condensateur soit beaucoup plus grand que la période du signal)
+Note, l'équation est C \gg \frac{1}{Rf} pour que le condensateur effectue un travail pertinent (on cherche a ce que le temps de décharge du condensateur soit beaucoup plus grand que la période du signal)
 ▶ Augmenter la capacité du condensateur. Oui, conformément à l'équation
 ▶ Augmenter la fréquence du signal. Oui, conformément à l'équation
 ▶ Augmenter l’amplitude en tension du signal d’entrée.
@@ -24,6 +24,9 @@ Q4 À la partie 4 du laboratoire, vous avez utilisé un ampli-op dans un circuit
 a) Alimentez (Add Voltage Source) l’amplificateur différentiel dans votre simulation avec vcc+ = 10 V et vcc− = −10 V .
 b) Vérifiez que les entrées vin,+ (non inverseuse) et vin,− (inverseuse) ont des effets opposés sur la sortie vout. Pour ce, appliquez une tension CC fixe de 1 V sur l’entrée non inverseuse et une rampe (Sawtooth) sur la plage [0, 2] V sur l’entrée inverseuse. Notez l’effet de la rampe sur vout en affichant simultanément les deux signaux dans des oscilloscopes, puis répéter en interchangeant les sources sur les entrées.
 Vous aurez pu observer que bien que la tension de sortie ne soit pas une fonction linéaire de la différence de tension entre vin,+ et vin,−, la première entrée tend à faire varier vout dans la même direction qu’elle, tandis que la seconde pousse vout dans la direction opposée. Le comportement de ce circuit est donc loin du comportement idéal qu’il est possible d’approcher avec les circuits plus complexes des ampli-op, mais il illustre néanmoins le principe de base d’un amplificateur différentiel qu’il est possible d’obtenir avec seulement deux transistors. Pour l’évaluation, remettez un lien vers votre simulation complétée du circuit (File → Export As Link...) ainsi qu’une capture d’écran qui inclut une vue des signaux sur les oscilloscopes.
+
+Premier branchement :  https://tinyurl.com/ykfch5gc
+Deuxième branchement : https://tinyurl.com/ysyj7do5
 
 Q5 En pratique, un suiveur de tension est. . .
 ▶ . . .inutile puisqu’il ne fait rien concrètement, il ne fait que donner une tension de sortie égale à l’entrée.
