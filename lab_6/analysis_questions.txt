@@ -1,0 +1,8 @@
+Q1 Pour chaque signal ci-après, dites si la tension efficace prise en mode CC est supérieure, inférieure ou égale à la tension efficace prise en mode CA.
+
+Signal sinusoïdal
+
+
+Choice 1 of 3:Supérieure
+Choice 2 of 3:Inférieure
+Choice 3 of 3:Égale
