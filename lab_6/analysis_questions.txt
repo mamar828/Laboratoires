@@ -1,17 +1,22 @@
 Q1 Pour chaque signal ci-après, dites si la tension efficace prise en mode CC est supérieure, inférieure ou égale à la tension efficace prise en mode CA.
 ▶ Signal sinusoïdal
+=
 ▶ Signal sinusoïdal redressé en simple alternance
+>
 ▶ Signal sinusoïdal redressé en double alternance
+>
 
 Q2 Dans la première partie du laboratoire, après avoir modifié le pont de diodes afin d’avoir un signal moyenné, vous avez sûrement remarqué, à l’aide de l’oscilloscope, que ce dernier n’était pas encore tout à fait constant : les oscillations étaient encore notables. Parmi les options suivantes, laquelle ou lesquelles permet(tent) de réduire ces oscillations ?
-▶ Augmenter la capacité du condensateur.
-▶ Augmenter la fréquence du signal.
+
+Note, l'équation est C \gg \frac{1}{Rf} pour que le condensateur effectue un travail pertinent (on cherche a ce que le temps de démarche du condensateur soit beaucoup plus grand que la période du signal)
+▶ Augmenter la capacité du condensateur. Oui, conformément à l'équation
+▶ Augmenter la fréquence du signal. Oui, conformément à l'équation
 ▶ Augmenter l’amplitude en tension du signal d’entrée.
 ▶ Augmenter la teneur en fibres de votre alimentation.
 
 Q3 À la partie 2, le transistor est utilisé dans son mode d’amplification linéaire, parfois dit mode actif. Quel est son facteur d’amplification, défini par ∆vout/∆vin, où vin est la tension appliquée sur la base du transistor ?
 ▶ 0,5
-▶ 1
+▶ 1 Nous avons une pente de 1 dans le cahier de lab
 ▶ 1.5
 ▶ 2
 
@@ -22,8 +27,10 @@ Vous aurez pu observer que bien que la tension de sortie ne soit pas une fonctio
 
 Q5 En pratique, un suiveur de tension est. . .
 ▶ . . .inutile puisqu’il ne fait rien concrètement, il ne fait que donner une tension de sortie égale à l’entrée.
-▶ . . .utile puisqu’il sert de tampon (buffer) pour fixer la tension à un point en fonction d’un autre sans en affecter le comportement du circuit, ce qui peut permettre de construire une source de tension commandée, par exemple.
-▶ . . .très utile puisqu’il permet de connaître la tension artérielle d’un patient. Q6 Cette question met en contraste une approche déductive en (a) avec une approche de conception en (b) qui deviendra progressivement prépondérante pendant le reste du cours pour favoriser le développement de votre autonomie expérimentale.
+▶ . . .utile puisqu’il sert de tampon (buffer) pour fixer la tension à un point en fonction d’un autre sans en affecter le comportement du circuit, ce qui peut permettre de construire une source de tension commandée, par exemple. Ça, via internet (https://riverglennapts.com/fr/current-voltage/232-voltage-follower.html)
+▶ . . .très utile puisqu’il permet de connaître la tension artérielle d’un patient.
+
+Q6 Cette question met en contraste une approche déductive en (a) avec une approche de conception en (b) qui deviendra progressivement prépondérante pendant le reste du cours pour favoriser le développement de votre autonomie expérimentale.
 
 Q6.1 Exprimez algébriquement la tension vout en fonction de v1, v2 et R pour le circuit à la figure 11.
 
