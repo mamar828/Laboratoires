@@ -18,7 +18,6 @@ print(f"n: {n}, uncertainties: {n_u}")
 A_i = np.array([673.8, 640])
 A_r = np.array([636.3, -630])
 A_u = np.array([2.5, 10])
-
 G = A_r / A_i
 G_u = (A_u/A_r + A_u/A_i) * (A_r/A_i)
 print(f"Gamma: {G}, uncertatinties {G_u}")

@@ -45,7 +45,6 @@ def save_figure(file_path: str, show: bool=False):
     if show:
         plt.show(block=True)
 
-
 def make_power_figure():
     # Only resistance curve
     resistance_data = []
@@ -60,30 +59,38 @@ def make_power_figure():
     # Adding resistance + capacitor curve
     capacitor_data = []
     for i in range(1,23):
-        capacitor_data.append(read_lvm(f"lab_5/data_new/capacitor/part_2_{i}.lvm"))
+        capacitor_data.append(read_lvm(f"lab_5/data_new/capacitor_low/part_4_{i}.lvm"))
 
     c_global_array = np.stack((capacitor_data), axis=0)
     c_dissipated_power = c_global_array[:,:,1]**2 / c_global_array[:,:,0]
     c_plotted_array = np.stack((np.mean(c_global_array[:,:,0], axis=1), np.mean(c_dissipated_power, axis=1)), axis=1)
-
-
-    # Adding resistance + capacitor curve
-    capacitor_data_2 = []
-    for i in range(1,9):
-        capacitor_data_2.append(read_lvm(f"lab_5/data_new/capacitor_low/part_5_{i}.lvm"))
-
-    c_global_array_2 = np.stack((capacitor_data_2), axis=0)
-    c_dissipated_power_2 = c_global_array_2[:,:,1]**2 / c_global_array_2[:,:,0]
-    c_plotted_array_2 = np.stack((np.mean(c_global_array_2[:,:,0], axis=1), np.mean(c_dissipated_power_2, axis=1)), axis=1)
     
     # Plotting and setting the parameters
     for array, markertype, label in [[r_plotted_array, "go", "Circuit de la Figure 1"],
-                                     [c_plotted_array, "yo", "Circuit de la Figure 2"],
-                                     [c_plotted_array_2, "mo", "Circuit de la Figure 3"]]:
-        if markertype != "mo":
-            continue
+                                     [c_plotted_array, "mo", "Circuit de la Figure 2"]]:
         plt.plot(array[:,0], array[:,1], markertype, label=label, markersize=2)
     
+    def power_equation(R, a, b, h, k, d):
+        return a * (10**(b * (R-d)) - h)**2 + k
+    
+    def power_equation_1(R, a, h):
+        return a * (10**(R) - h)**2
+    
+    ordered_i = np.argsort(r_plotted_array[:,0])
+    r_plotted_array_ordered = np.stack((r_plotted_array[:,0][ordered_i], r_plotted_array[:,1][ordered_i]), axis=1)
+
+    # a, h = scipy.optimize.curve_fit(power_equation_1, r_plotted_array_ordered[:,0], r_plotted_array_ordered[:,1])[0]
+    a_1, b_1, h_1, k_1, d_1 = scipy.optimize.curve_fit(power_equation, r_plotted_array_ordered[:,0], r_plotted_array_ordered[:,1], p0=[])[0]
+    # a_2, b_2, h_2, k_2, d_2 = scipy.optimize.curve_fit(power_equation, c_plotted_array[:,0], c_plotted_array[:,1])[0]
+    
+    # print(r_plotted_array)
+    # print(r_plotted_array_ordered)
+
+    x_space = np.linspace(14, 200, 500)
+    # plt.plot(x_space, power_equation_1(x_space, a, h), "g-")
+    plt.plot(x_space, power_equation(x_space, a_1, b_1, h_1, k_1, d_1), "g-")
+    # plt.plot(x_space, power_equation(x_space, a_2, b_2, h_2, k_2, d_2), "m-")
+
     plt.title("Puissance moyenne dissipée [W] par la charge en fonction de la résistance [$\Omega$]")
     plt.xlabel("Résistance totale des composantes du circuit [$\Omega$]")
     plt.ylabel("Puissance moyenne dissipée [W]")
