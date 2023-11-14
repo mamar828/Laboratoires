@@ -36,5 +36,6 @@ Q5 En pratique, un suiveur de tension est. . .
 Q6 Cette question met en contraste une approche déductive en (a) avec une approche de conception en (b) qui deviendra progressivement prépondérante pendant le reste du cours pour favoriser le développement de votre autonomie expérimentale.
 
 Q6.1 Exprimez algébriquement la tension vout en fonction de v1, v2 et R pour le circuit à la figure 11.
+vout=-(v1+v2)
 
 Q6.2 Considérez deux points à des tensions différentes v1 et v2. Dessinez un circuit utilisant un amplificateur opérationnel et quelques résistances pour lequel la tension de sortie de l’ampli-op serait définie par l’équation suivante : vout = 2 v1 + 0,5 v2.
