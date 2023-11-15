@@ -50,6 +50,7 @@ def resistance_power_equation(R_charge, R_source):
     global V_source
     return V_source**2 / (R_charge + R_source)**2 * R_charge
 
+
 def capacitor_power_equation(R_charge, R_source):
     o = 2 * np.pi * 1000        # Omega value
     global capacity
@@ -126,32 +127,51 @@ def make_power_figure():
             input("")
 
     plt.errorbar(r_v_array[:,0], r_p_array[:,0], xerr=r_v_array[:,1], yerr=r_p_array[:,1], markersize=2, fmt="go",
-                 label="Circuit 1")
+                 label="Circuit de la Figure 1")
     plt.errorbar(c_v_array[:,0], c_p_array[:,0], xerr=c_v_array[:,1], yerr=c_p_array[:,1], markersize=2, fmt="mo",
-                 label="Circuit 2")
+                 label="Circuit de la Figure 2")
 
-    global R_source
     R_source_1, R_source_cov_1 = scipy.optimize.curve_fit(resistance_power_equation, r_v_array[:,0], r_p_array[:,0])
     R_source_1_u = np.sqrt(R_source_cov_1[0])
     R_source_2, R_source_cov_2 = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
-                                                          p0=4*10**(-6))
+                                                          p0=51)
     R_source_2_u = np.sqrt(R_source_cov_2[0])
     print(f"R_source_1 : {R_source_1} ± {R_source_1_u}\nR_source_2 : {R_source_2} ± {R_source_2_u}")
+    
+    x_space = np.linspace(14, 200, 50000)
+    print(f"Resistance - Standard R : {x_space[np.argmax(resistance_power_equation(x_space, R_source_1))]}")
+    
+    # plt.plot(x_space, resistance_power_equation(x_space, R_source_1), "g-", linewidth=1)
+    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2), "m-", linewidth=1)
+    print(f"Capacitor - Standard R : {x_space[np.argmax(capacitor_power_equation(x_space, R_source_2))]}")
+    
+    # Min max curves for capacitor
+    global capacity
+    capacity *= 0.8
+    R_source_2_min = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
+                                                          p0=51)[0]
+    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_min), "r--", linewidth=0.5)
+    print(f"Capacitor - Max R : {x_space[np.argmax(capacitor_power_equation(x_space, R_source_2_min))]}")
 
-    x_space = np.linspace(14, 200, 500)
-    plt.plot(x_space, resistance_power_equation(x_space, R_source_1), "g-", linewidth=1)
-    plt.plot(x_space, capacitor_power_equation(x_space, R_source_2), "m-", linewidth=1)
-
-    plt.title("Puissance moyenne dissipée [W] par la charge en fonction de la résistance [$\Omega$]")
-    plt.xlabel("Résistance totale des composantes du circuit [$\Omega$]")
-    plt.ylabel("Puissance moyenne dissipée [W]")
-    # plt.xscale("log")
+    capacity /= 0.8
+    capacity *= 1.2
+    R_source_2_max = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
+                                                          p0=51)[0]
+    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_max), "r--", linewidth=0.5)
+    print(f"Capacitor - Min R : {x_space[np.argmax(capacitor_power_equation(x_space, R_source_2_max))]}")
+    print(f"R_sources from capacitor :\n\t{R_source_2_min}\n\t{R_source_2}\n\t{R_source_2_max}")
+    
+    # plt.title("Puissance moyenne dissipée par la charge en fonction de sa résistance")
+    plt.xlabel("Résistance de la charge mesurée en courant continu [$\Omega$]")
+    plt.ylabel("Puissance moyenne dissipée par la charge [W]")
+    plt.xscale("log")
+    plt.xticks(list(range(20,110,10)), list(range(20,110,10)))
     plt.legend(loc="upper right")
     plt.show()
 
 
 V_source = 1 / np.sqrt(2)
-capacity = 4*10**(-6)*1.2
+capacity = 4*10**(-6)
 make_power_figure()
 
 
