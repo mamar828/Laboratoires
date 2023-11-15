@@ -1,1 +1,0 @@
-\frac{\frac{3\cdot10^8}{250\cdot10^6-8\cdot10^6}-\frac{3\cdot10^8}{250\cdot10^6+8\cdot10^6}}{2}

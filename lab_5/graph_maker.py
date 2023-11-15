@@ -46,6 +46,19 @@ def save_figure(file_path: str, show: bool=False):
         plt.show(block=True)
 
 
+def resistance_power_equation(R_charge, R_source):
+    global V_source
+    return V_source**2 / (R_charge + R_source)**2 * R_charge
+
+def capacitor_power_equation(R_charge, R_source):
+    o = 2 * np.pi * 1000        # Omega value
+    global capacity
+    global V_source
+    return (V_source**2 / ((R_charge / (R_charge**2 * (o*capacity)**2 + 1) + R_source)**2 
+                           + (o * capacity / ((o*capacity)**2 + 1 / (R_charge**2)))**2) 
+                           * (R_charge / (R_charge**2 * (o*capacity)**2 + 1)))
+
+
 def get_dissipated_power(filename: str) -> tuple:
     data = read_lvm(filename)
     # plt.hist(data[:,0])
@@ -62,22 +75,25 @@ def get_dissipated_power(filename: str) -> tuple:
 # print(get_dissipated_power("lab_5/data_new/capacitor/part_4_6.lvm"))
 
 
-
 def make_power_figure():
     # Resistance curve
     resistance_values = []
+    resistance_potent = []
     resistance_powers = []
-    for part_no in range(1,24):
-        resistance, potential, power = get_dissipated_power(f"lab_5/data_new/resistance/part_1_{part_no}.lvm")
+    for part_no in range(2,24):
+        resistance, potential, power = get_dissipated_power(f"lab_5/data_new/resistance_ordered/part_1_{part_no}.lvm")
         resistance_values.append(resistance)
+        resistance_potent.append(potential)
         resistance_powers.append(power)
 
     # Resistance curve
     capacitor_values = []
+    capacitor_potent = []
     capacitor_powers = []
     for part_no in range(1,23):
-        resistance, potential, power = get_dissipated_power(f"lab_5/data_new/capacitor/part_4_{part_no}.lvm")
+        resistance, potential, power = get_dissipated_power(f"lab_5/data_new/capacitor_ordered/part_4_{part_no}.lvm")
         capacitor_values.append(resistance)
+        capacitor_potent.append(potential)
         capacitor_powers.append(power)
 
     r_v_array = np.array(resistance_values)
@@ -85,32 +101,58 @@ def make_power_figure():
     c_v_array = np.array(capacitor_values)
     c_p_array = np.array(capacitor_powers)
 
+    if False:
+        # Write to a file all the data used for plotting
+        # This part is used for making the global table
+        with open("lab_5/part_1_tables.txt", "a") as f:
+            print(f"CIRCUIT 1\nResistance")
+            np.savetxt('lab_5/part_1_tables.txt', r_v_array, fmt = '%.8f')
+            input("")
+            print(f"Potential")
+            np.savetxt('lab_5/part_1_tables.txt', np.array(resistance_potent), fmt = '%.8f')
+            input("")
+            print(f"Power")
+            np.savetxt('lab_5/part_1_tables.txt', r_p_array, fmt = '%.8f')
+            input("")
+            
+            print(f"CIRCUIT 2\nResistance")
+            np.savetxt('lab_5/part_1_tables.txt', c_v_array, fmt = '%.8f')
+            input("")
+            print(f"Potential")
+            np.savetxt('lab_5/part_1_tables.txt', np.array(capacitor_potent), fmt = '%.8f')
+            input("")
+            print(f"Power")
+            np.savetxt('lab_5/part_1_tables.txt', c_p_array, fmt = '%.8f')
+            input("")
+
     plt.errorbar(r_v_array[:,0], r_p_array[:,0], xerr=r_v_array[:,1], yerr=r_p_array[:,1], markersize=2, fmt="go",
                  label="Circuit 1")
     plt.errorbar(c_v_array[:,0], c_p_array[:,0], xerr=c_v_array[:,1], yerr=c_p_array[:,1], markersize=2, fmt="mo",
                  label="Circuit 2")
 
-    def power_equation(R_charge, R_source, V_source):
-        return V_source**2 / (R_charge + R_source)**2 * R_charge
-
-    R_source_1, V_source_1 = scipy.optimize.curve_fit(power_equation, r_v_array[:,0], r_p_array[:,0])[0]
-    R_source_2, V_source_2 = scipy.optimize.curve_fit(power_equation, c_v_array[:,0], c_p_array[:,0])[0]
+    global R_source
+    R_source_1, R_source_cov_1 = scipy.optimize.curve_fit(resistance_power_equation, r_v_array[:,0], r_p_array[:,0])
+    R_source_1_u = np.sqrt(R_source_cov_1[0])
+    R_source_2, R_source_cov_2 = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
+                                                          p0=4*10**(-6))
+    R_source_2_u = np.sqrt(R_source_cov_2[0])
+    print(f"R_source_1 : {R_source_1} ± {R_source_1_u}\nR_source_2 : {R_source_2} ± {R_source_2_u}")
 
     x_space = np.linspace(14, 200, 500)
-    plt.plot(x_space, power_equation(x_space, R_source_1, V_source_1), "g-", linewidth=1)
-    plt.plot(x_space, power_equation(x_space, R_source_2, V_source_2), "m-", linewidth=1)
+    plt.plot(x_space, resistance_power_equation(x_space, R_source_1), "g-", linewidth=1)
+    plt.plot(x_space, capacitor_power_equation(x_space, R_source_2), "m-", linewidth=1)
 
     plt.title("Puissance moyenne dissipée [W] par la charge en fonction de la résistance [$\Omega$]")
     plt.xlabel("Résistance totale des composantes du circuit [$\Omega$]")
     plt.ylabel("Puissance moyenne dissipée [W]")
     # plt.xscale("log")
     plt.legend(loc="upper right")
-    # plt.show()
+    plt.show()
 
 
+V_source = 1 / np.sqrt(2)
+capacity = 4*10**(-6)*1.2
 make_power_figure()
-
-
 
 
 def make_filix_figure():
@@ -135,4 +177,4 @@ def make_filix_figure():
     plt.legend(loc="upper right")
     plt.show()
 
-make_filix_figure()
+# make_filix_figure()
