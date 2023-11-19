@@ -80,10 +80,14 @@ import matplotlib.pyplot as plt
 
 
 
-f = np.array([1,2])
-g = np.array([4,5])
-h = np.array([7,8])
+# f = np.array([1,2])
+# g = np.array([4,5])
+# h = np.array([7,8])
 
-a = np.append(f,g, axis=1)
-print(a)
+# a = np.append(f,g, axis=1)
+# print(a)
 # print(np.stack((a,h), axis=2))
+
+a = np.array([1,2,3,4,5,6,7,8,9,10])
+print(a.reshape(2,5))
+
