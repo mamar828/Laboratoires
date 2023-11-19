@@ -192,22 +192,27 @@ def make_capacitance_figure():
     c_v_array = np.array(capacitor_values)[:,0].reshape(5,8)
     c_p_array = np.array(capacitor_powers)[:,0].reshape(5,8)
 
-    plt.plot(c_v_array[:,0], c_p_array[:,0], "g^", markersize=2)
-    plt.plot(c_v_array[:,1], c_p_array[:,1], "k^", markersize=2)
-    plt.plot(c_v_array[:,2], c_p_array[:,2], "y^", markersize=2)
-    plt.plot(c_v_array[:,3], c_p_array[:,3], "r^", markersize=2)
-    plt.plot(c_v_array[:,4], c_p_array[:,4], "b^", markersize=2)
-    plt.plot(c_v_array[:,5], c_p_array[:,5], "m^", markersize=2)
-    plt.plot(c_v_array[:,6], c_p_array[:,6], "c^", markersize=2)
-    plt.plot(c_v_array[:,7], c_p_array[:,7], "g^", markersize=2)
+    plt.plot(c_v_array[:,0], c_p_array[:,0], "g^", markersize=2, label="Capacité de 0μF")
+    plt.plot(c_v_array[:,1], c_p_array[:,1], "k^", markersize=2, label="Capacité de 1μF")
+    plt.plot(c_v_array[:,2], c_p_array[:,2], "y^", markersize=2, label="Capacité de 2μF")
+    plt.plot(c_v_array[:,3], c_p_array[:,3], "r^", markersize=2, label="Capacité de 3μF")
+    plt.plot(c_v_array[:,4], c_p_array[:,4], "b^", markersize=2, label="Capacité de 4μF")
+    plt.plot(c_v_array[:,5], c_p_array[:,5], "m^", markersize=2, label="Capacité de 5μF")
+    plt.plot(c_v_array[:,6], c_p_array[:,6], "c^", markersize=2, label="Capacité de 6μF")
+    plt.plot(c_v_array[:,7], c_p_array[:,7], color="#c97f17", 
+             linestyle="", marker="^", markersize=2, label="Capacité de 7μF")
 
     x_space = np.linspace(14, 200, 1000)
     global capacity
     
-    for i, color in zip(range(8), ["g-", "k-", "y-", "r-", "b-", "m-", "c-", "g-"]):
+    for i, color in zip(range(8), ["g-", "k-", "y-", "r-", "b-", "m-", "c-", "#c97f17"]):
         capacity = i * 10**(-6)
         R_source = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,i], c_p_array[:,i])[0]
         plt.plot(x_space, capacitor_power_equation(x_space, R_source), color, linewidth=0.5)
+
+    plt.xlabel("Résistance de la charge mesurée en courant continu [$\Omega$]")
+    plt.ylabel("Puissance moyenne dissipée par la charge [W]")
+    plt.legend(loc="upper right")
 
     plt.show()
 
@@ -236,5 +241,6 @@ def make_filix_figure():
     # plt.xscale("log")
     plt.legend(loc="upper right")
     plt.show()
+
 
 # make_filix_figure()
