@@ -175,7 +175,7 @@ def make_power_figure():
 
 V_source = 1 / np.sqrt(2)
 capacity = 4*10**(-6)
-make_power_figure()
+# make_power_figure()
 
 
 def make_capacitance_figure():
@@ -211,6 +211,9 @@ def make_capacitance_figure():
         capacity = i * 10**(-6)
         R_source = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,i], c_p_array[:,i])[0]
         plt.plot(x_space, capacitor_power_equation(x_space, R_source), color, linewidth=0.5)
+        print(
+            f"capacity {capacity:.0e} : {x_space[np.argmax(capacitor_power_equation(x_space, R_source))]:.2f}"
+        )
 
     plt.xlabel("Résistance de la charge mesurée en courant continu [$\Omega$]")
     plt.ylabel("Puissance moyenne dissipée par la charge [W]")
