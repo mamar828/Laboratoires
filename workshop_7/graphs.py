@@ -39,7 +39,7 @@ def get_heaviside_linspaces(f_cut, lower_bound, upper_bound):
     ])
 
 def circuit_1():
-    array = read_lvm("atelier_7/1_C.lvm")[:13,:]
+    array = read_lvm("workshop_7/1_C.lvm")[:13,:]
     print(array)
     plt.plot(2**array[:,0], array[:,3], "yo")
     plt.xlabel("Fréquence [Hz]")
@@ -47,7 +47,7 @@ def circuit_1():
     # plt.title("Déphasage en fonction de la fréquence aux bornes du condensateur dans le circuit de la Figure 1")
     plt.show()
 
-    array = read_lvm("atelier_7/1_R.lvm")[:,:]
+    array = read_lvm("workshop_7/1_R.lvm")[:,:]
     print(array)
     plt.plot(2**array[:,0], array[:,3], "yo")
     plt.xlabel("Fréquence [Hz]")
@@ -58,7 +58,7 @@ def circuit_1():
 circuit_1()
 
 def circuit_4a():
-    array = read_lvm("atelier_7/4a)test_6.lvm")
+    array = read_lvm("workshop_7/4a)test_6.lvm")
     print(array)
     plt.plot(get_frequencies(array), get_gain(array), "yo")
     heaviside = get_heaviside_linspaces(1/(2*np.pi*270*10**(-6)), lower_bound=0, upper_bound=-32.63)
@@ -74,7 +74,7 @@ def circuit_4a():
 circuit_4a()
 
 def circuit_4c():
-    array = read_lvm("atelier_7/4c)_in_out_1.lvm")
+    array = read_lvm("workshop_7/4c)_in_out_1.lvm")
     print(array)
     plt.plot(get_frequencies(array), get_gain(array), "yo")
     heaviside = get_heaviside_linspaces(260000, lower_bound=0, upper_bound=-2.469)
