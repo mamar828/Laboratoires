@@ -77,6 +77,7 @@ def get_dissipated_power(filename: str) -> tuple:
 
 
 def make_power_figure():
+    plt.figure(figsize=(8,5))
     # Resistance curve
     resistance_values = []
     resistance_potent = []
@@ -126,8 +127,8 @@ def make_power_figure():
             np.savetxt('lab_5/part_1_tables.txt', c_p_array, fmt = '%.8f')
             input("")
 
-    plt.errorbar(r_v_array[:,0], r_p_array[:,0], xerr=r_v_array[:,1], yerr=r_p_array[:,1], markersize=2, fmt="go",
-                 label="Circuit de la Figure 1")
+    # plt.errorbar(r_v_array[:,0], r_p_array[:,0], xerr=r_v_array[:,1], yerr=r_p_array[:,1], markersize=2, fmt="go",
+    #              label="Circuit de la Figure 1")
     plt.errorbar(c_v_array[:,0], c_p_array[:,0], xerr=c_v_array[:,1], yerr=c_p_array[:,1], markersize=2, fmt="mo",
                  label="Circuit de la Figure 2")
 
@@ -142,7 +143,7 @@ def make_power_figure():
     print(f"Resistance circuit - Fitted R: {x_space[np.argmax(resistance_power_equation(x_space, R_source_1))]}")
     
     # plt.plot(x_space, resistance_power_equation(x_space, R_source_1), "g-", linewidth=1)
-    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2), "m-", linewidth=1)
+    plt.plot(x_space, capacitor_power_equation(x_space, R_source_2), "m-", linewidth=1)
     print(f"Capacitor circuit - Fitted R: {x_space[np.argmax(capacitor_power_equation(x_space, R_source_2))]}")
     
     # Min max curves for capacitor
@@ -150,7 +151,7 @@ def make_power_figure():
     capacity *= 0.8
     R_source_2_min = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
                                                           p0=51)[0]
-    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_min), "r--", linewidth=0.5)
+    plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_min), "r--", linewidth=0.5)
     print("Capacitor circuit - R at max P with min C: " + 
                 str(x_space[np.argmax(capacitor_power_equation(x_space, R_source_2_min))]))
 
@@ -158,7 +159,7 @@ def make_power_figure():
     capacity *= 1.2
     R_source_2_max = scipy.optimize.curve_fit(capacitor_power_equation, c_v_array[:,0], c_p_array[:,0],
                                                           p0=51)[0]
-    # plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_max), "r--", linewidth=0.5)
+    plt.plot(x_space, capacitor_power_equation(x_space, R_source_2_max), "r--", linewidth=0.5)
     print("Capacitor circuit - R at max P with max C: " + 
                 str(x_space[np.argmax(capacitor_power_equation(x_space, R_source_2_max))]))
     print(f"R_sources from capacitor circuit with varying C:\n\t{R_source_2_min}\n\t{R_source_2}\n\t{R_source_2_max}")
@@ -166,18 +167,19 @@ def make_power_figure():
     # plt.title("Puissance moyenne dissipée par la charge en fonction de sa résistance")
     plt.xlabel("Résistance de la charge mesurée en courant continu [$\Omega$]")
     plt.ylabel("Puissance moyenne dissipée par la charge [W]")
-    plt.xscale("log")
-    plt.xticks(list(range(20,110,10)), list(range(20,110,10)))
-    plt.legend(loc="upper right")
+    # plt.xscale("log")
+    # plt.xticks(list(range(20,110,10)), list(range(20,110,10)))
+    # plt.legend(loc="upper right")
     plt.show()
 
 
 V_source = 1 / np.sqrt(2)
 capacity = 4*10**(-6)
-# make_power_figure()
+make_power_figure()
 
 
 def make_capacitance_figure():
+    plt.figure(figsize=(8,5))
     capacitor_values = []
     capacitor_potent = []
     capacitor_powers = []
@@ -213,7 +215,6 @@ def make_capacitance_figure():
     plt.xlabel("Résistance de la charge mesurée en courant continu [$\Omega$]")
     plt.ylabel("Puissance moyenne dissipée par la charge [W]")
     plt.legend(loc="upper right")
-
     plt.show()
 
 

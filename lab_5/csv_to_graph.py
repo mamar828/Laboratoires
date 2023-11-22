@@ -84,50 +84,52 @@ def get_csv_data(filename: str) -> np.ndarray:
 def make_graphs():
     arrays = [get_csv_data(f"lab_5/data_new/small_pulse/lol_{i}.csv") for i in range(102,107)]
     fig, axes = plt.subplots(2, 2, sharey="row", sharex="col")
+    fig.set_size_inches(12,6)
 
     axes[0,0].plot(arrays[0][:,0], arrays[0][:,1], "r-", label="Signal détecté à\nl'entrée en circuit ouvert")
-    axes[0,0].legend(loc="upper right")
+    axes[0,0].legend(loc="lower right", handlelength=0)
     axes[0,0].title.set_text("A")
     axes[0,1].plot(arrays[1][:,0], arrays[1][:,1], "r-", label="Signal détecté à\nl'entrée avec court-circuit")
-    axes[0,1].legend(loc="upper right")
+    axes[0,1].legend(loc="lower left", handlelength=0)
     axes[0,1].title.set_text("B")
     axes[1,0].plot(arrays[2][:,0], arrays[2][:,2], "b-", label="Signal détecté à la\nsortie en circuit ouvert")
-    axes[1,0].legend(loc="upper right")
+    axes[1,0].legend(loc="upper right", handlelength=0)
     axes[1,0].title.set_text("C")
     axes[1,1].plot(arrays[3][:,0], arrays[3][:,2], "b-", label="Signal détecté à la\nsortie avec court-circuit")
-    axes[1,1].legend(loc="upper right")
+    axes[1,1].legend(loc="upper left", handlelength=0)
     axes[1,1].title.set_text("D")
 
-    fig.text(0.5, 0.04, "Temps [s]", ha="center")
-    fig.text(0.07, 0.5, "Amplitude [V]", va="center", rotation="vertical")
-    manager = plt.get_current_fig_manager()
-    manager.full_screen_toggle()
+    fig.text(0.5, 0.01, "Temps [s]", ha="center", size=12)
+    fig.text(0.05, 0.5, "Amplitude [V]", va="center", rotation="vertical", size=12)
+    # manager = plt.get_current_fig_manager()
+    # manager.full_screen_toggle()
     plt.show()
     
     arrays = [get_csv_data(f"lab_5/data_new/large_pulse/scope_{i}.csv") for i in [3,4]]
     fig, axes = plt.subplots(2, 2, sharey="all", sharex="col")
+    fig.set_size_inches(12,6)
 
     axes[0,0].plot(arrays[0][:,0], arrays[0][:,1], "r-", label="Signal détecté à\nl'entrée en circuit ouvert")
-    axes[0,0].legend(loc="upper right")
+    axes[0,0].legend(loc="lower right", handlelength=0)
     axes[0,0].title.set_text("A")
     axes[0,1].plot(arrays[1][:,0], arrays[1][:,1], "r-", label="Signal détecté à\nl'entrée avec court-circuit")
-    axes[0,1].legend(loc="upper right")
+    axes[0,1].legend(loc="lower left", handlelength=0)
     axes[0,1].title.set_text("B")
     axes[1,0].plot(arrays[0][:,0], arrays[0][:,2], "b-", label="Signal détecté à la\nsortie en circuit ouvert")
-    axes[1,0].legend(loc="upper right")
+    axes[1,0].legend(loc="upper right", handlelength=0)
     axes[1,0].title.set_text("C")
     axes[1,1].plot(arrays[1][:,0], arrays[1][:,2], "b-", label="Signal détecté à la\nsortie avec court-circuit")
-    axes[1,1].legend(loc="upper right")
+    axes[1,1].legend(loc="upper left", handlelength=0)
     axes[1,1].title.set_text("D")
 
-    fig.text(0.5, 0.04, "Temps [s]", ha="center")
-    fig.text(0.07, 0.5, "Amplitude [V]", va="center", rotation="vertical")
-    manager = plt.get_current_fig_manager()
-    manager.full_screen_toggle()
+    fig.text(0.5, 0.01, "Temps [s]", ha="center", size=12)
+    fig.text(0.05, 0.5, "Amplitude [V]", va="center", rotation="vertical", size=12)
+    # manager = plt.get_current_fig_manager()
+    # manager.full_screen_toggle()
     plt.show()
 
 
-# make_graphs()
+make_graphs()
 
 
 def test_graphs():
