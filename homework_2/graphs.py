@@ -31,9 +31,9 @@ def phase_equation_1(omega):
 
 def gain_equation_2(omega):
     s = 1j*omega
-    return np.abs(
-        (135*s*10**6)/(46*10**12+546*s*10**6+1620*s**2)
-    )
+    return (270*10**6*omega)/(np.sqrt((47*10**12-3240*omega**2)**2+(1092*10**6*omega)**2))
+    # Alternate method
+    return np.abs((270*s*10**6)/(47*10**12+1092*s*10**6+3240*s**2))
 
 
 def circuit_1():
